@@ -1,1 +1,9 @@
-<text>主页</text>
+<swiper class="swiper" indicator-dots="true" indicator-color="#ffffff" indicator-active-color="#D3D3D3" autoplay="true" interval="3000" circular="true">
+  <block wx:for="{{background}}" wx:key="{{item.id}}">
+    <swiper-item>
+      <view class="swiper-item">
+        <image src="{{item.url}}" mode="scaleToFill"></image>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>

@@ -1,1 +1,13 @@
-/* pages/home/home.wxss */
+.swiper{
+  height: 580rpx;
+}
+swiper-item{
+  height: 100%;
+}
+.swiper-item{
+  height: 100%;
+}
+.swiper-item image{
+  width: 100%;
+  height: 100%;
+}

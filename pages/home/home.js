@@ -1,11 +1,19 @@
 // pages/home/home.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    background:[{
+      id: 0,
+      url: "/image/home/swiper/img01.jpg"
+    },
+    {
+      id: 1,
+      url: "/image/home/swiper/img02.jpg"
+    },
+    {
+      id: 2,
+      url: "/image/home/swiper/img03.jpg"
+    },
+    ]
   },
 
   /**

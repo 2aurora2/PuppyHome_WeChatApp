@@ -13,6 +13,14 @@ Page({
       id: 2,
       url: "/image/home/swiper/img03.jpg"
     },
+    {
+      id: 3,
+      url: "/image/home/swiper/img04.jpg"
+    },
+    {
+      id: 4,
+      url: "/image/home/swiper/img05.jpg"
+    },
     ]
   },
 

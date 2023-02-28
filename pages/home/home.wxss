@@ -1,5 +1,5 @@
 .swiper{
-  height: 580rpx;
+  height: 600rpx;
 }
 swiper-item{
   height: 100%;

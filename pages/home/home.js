@@ -17,10 +17,6 @@ Page({
       id: 3,
       url: "/image/home/swiper/img04.jpg"
     },
-    {
-      id: 4,
-      url: "/image/home/swiper/img05.jpg"
-    },
     ]
   },
 
@@ -78,5 +74,5 @@ Page({
    */
   onShareAppMessage() {
 
-  }
+  },
 })

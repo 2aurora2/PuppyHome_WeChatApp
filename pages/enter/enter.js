@@ -1,21 +1,18 @@
 Page({
   data: {
-
+    userInfo: {},
+    hasUserInfo: false,
+    canIUseGetUserProfile: false,
   },
 
   onLoad(options) {
-
+    
   },
-
-  onReady() {
-
-  },
-
   onShow() {
     setTimeout(function () {
       wx.switchTab({
         url: "/pages/home/home",
       })
-    }, 3000)
+    }, 2000)
   }
 })

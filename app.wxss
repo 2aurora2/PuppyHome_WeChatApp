@@ -1,4 +1,9 @@
 /**app.wxss**/
+
+/* 引入weui组件库 */
+/* weui官方文档：https://wechat-miniprogram.github.io/weui/docs/ */
+@import '/miniprogram_npm/weui-miniprogram/weui-wxss/dist/style/weui.wxss';
+
 .container {
   height: 100%;
   display: flex;

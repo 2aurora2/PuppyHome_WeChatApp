@@ -1,0 +1,22 @@
+{
+  "name": "puppyhome_wechatapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2aurora2/PuppyHome_WeChatApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/2aurora2/PuppyHome_WeChatApp/issues"
+  },
+  "homepage": "https://github.com/2aurora2/PuppyHome_WeChatApp#readme",
+  "dependencies": {
+    "weui-miniprogram": "^1.2.7"
+  }
+}

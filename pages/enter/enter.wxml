@@ -1,9 +1,8 @@
-<view class="WelCome_Header">
-  <image src="/image/enter/enter_icon.png"></image>
+<view class="Container">
+  <view class="WelCome_Header">
+    <image src="/image/enter/enter_icon.png"></image>
+  </view>
+  <view class="WelCome_Tail_1">
+    <text decode="{{true}}">修勾之家</text>
+  </view>
 </view>
-<view  class="WelCome_Tail_1">
-   <text decode="{{true}}">修勾之家</text>
-</view>
-
-
-

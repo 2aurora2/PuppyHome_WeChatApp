@@ -25,5 +25,19 @@
 .WelCome_Tail_1 text {
   font-size: 60rpx;
   color: #1d1919;
-  font-family: STKaiti;
+  font-family: "楷体";
+  font-weight: bolder;
+}
+.WelCome_Tail_2 {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 53%;
+  width: 100%;
+}
+
+.WelCome_Tail_2 text {
+  font-size: 35rpx;
+  color: #1d1919;
+  font-family: "楷体";
 }

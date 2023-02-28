@@ -1,4 +1,4 @@
-// pages/enter/enter.js
+// pages/MyInfo/MyInfo.js
 Page({
 
   /**
@@ -26,11 +26,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    setTimeout(function() {
-      wx.switchTab({
-        url: "/pages/home/home",
-      })
-    }, 3000)
+
   },
 
   /**

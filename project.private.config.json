@@ -3,5 +3,18 @@
   "projectname": "PuppyHome_WeChatApp",
   "setting": {
     "compileHotReLoad": false
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "enter",
+          "pathName": "pages/enter/enter",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
   }
 }

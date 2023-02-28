@@ -5,4 +5,7 @@
   <view class="WelCome_Tail_1">
     <text decode="{{true}}">修勾之家</text>
   </view>
+  <view class="WelCome_Tail_2">
+    <text decode="{{true}}">一个致力于服务修勾的平台</text>
+  </view>
 </view>

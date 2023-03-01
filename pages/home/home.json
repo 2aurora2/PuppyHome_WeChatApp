@@ -1,4 +1,6 @@
 {
   "navigationStyle": "custom",
-  "usingComponents": {}
+  "usingComponents": {
+    "mp-dialog": "weui-miniprogram/dialog/dialog"
+  }
 }

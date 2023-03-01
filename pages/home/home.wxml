@@ -7,3 +7,6 @@
     </swiper-item>
   </block>
 </swiper>
+<!-- 弹窗 -->
+<mp-dialog buttons="{{btns}}" mask="true" mask-closable="true" show="{{!isshow}}" 
+title="{{dialogText}}" bindbuttontap="ToSetUserInfo"></mp-dialog>

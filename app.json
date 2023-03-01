@@ -1,11 +1,11 @@
 {
   "pages": [
-    "pages/MyInfoSubPages/setUserInfo/setUserInfo",
-    "pages/enter/enter",
     "pages/home/home",
+    "pages/enter/enter",
     "pages/MyInfo/MyInfo",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/MyInfoSubPages/setUserInfo/setUserInfo"
   ],
   "window": {
     "backgroundTextStyle": "light",

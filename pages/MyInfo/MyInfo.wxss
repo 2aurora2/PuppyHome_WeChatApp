@@ -3,7 +3,7 @@
 }
 
 .top-image {
-  height: 550rpx;
+  height: 580rpx;
   width: 100%;
   position: absolute;
   top: 0rpx;

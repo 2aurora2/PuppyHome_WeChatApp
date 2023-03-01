@@ -38,6 +38,7 @@ App({
                   },
                   success(res) {
                     this.globalData.userInfo = res.data.data.user; //存储用户信息
+                    console.log(res.data.data.user);
                   }
                 })
               } else {

@@ -9,4 +9,5 @@
 
 >2023/3/1
 
-* wx.login()&wx.request()实现token的存取以及userInfo的获取
+* wx.login( ) & wx.request( )实现token的存取以及userInfo的获取
+* 利用腾讯云的cos对象存储实现图片的url访问

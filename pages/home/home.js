@@ -1,22 +1,23 @@
 // pages/home/home.js
+const app = getApp();
 Page({
   data: {
-    background:[{
-      id: 0,
-      url: "/image/home/swiper/img01.jpg"
-    },
-    {
-      id: 1,
-      url: "/image/home/swiper/img02.jpg"
-    },
-    {
-      id: 2,
-      url: "/image/home/swiper/img03.jpg"
-    },
-    {
-      id: 3,
-      url: "/image/home/swiper/img04.jpg"
-    },
+    background: [{
+        id: 0,
+        url: app.globalData.cdnHost + "swiper/img01.jpg"
+      },
+      {
+        id: 1,
+        url: app.globalData.cdnHost + "swiper/img02.jpg"
+      },
+      {
+        id: 2,
+        url: app.globalData.cdnHost + "swiper/img03.jpg"
+      },
+      {
+        id: 3,
+        url: app.globalData.cdnHost + "swiper/img04.jpg"
+      },
     ]
   },
 

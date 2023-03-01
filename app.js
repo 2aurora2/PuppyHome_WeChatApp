@@ -56,6 +56,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    hasEvenLogin: null
+    hasEvenLogin: null,
+    cdnHost: "https://puppyhome-1317060763.cos.ap-guangzhou.myqcloud.com/"
   }
 })

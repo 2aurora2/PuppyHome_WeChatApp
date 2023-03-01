@@ -1,4 +1,4 @@
-// pages/SetInfo/SetInfo.js
+// pages/MuInfoSubPages/setUserInfo/setUserInfo.js
 Page({
 
   /**

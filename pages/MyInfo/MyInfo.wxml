@@ -1,1 +1,6 @@
-<text>我的</text>
+<view class="top">
+  <view class="top-image">
+    <!-- TopImage-color: #F5DEB3 -->
+    <image src="/image/MyInfo/TopImage.png" mode="scaleToFill"></image>
+  </view>
+</view>

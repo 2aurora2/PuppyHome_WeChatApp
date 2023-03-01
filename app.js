@@ -10,30 +10,50 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        if(res.code){
+        if (res.code) {
           console.log(res.code)
           wx.request({
-            url: 'http://localhost:3000/wx/login',//服务器接口地址
-            method: 'POST',//请求方式
-            header:{
-              'content-type':'application/x-www-form-urlencoded'
+            url: 'http://localhost:3000/wx/login', //将res.code发送到服务器地址
+            method: 'POST',
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'
             },
-            data:{
+            data: {
               code: res.code
             },
-            success(res){
-              wx.setStorageSync('token',res.data.data.token)
-              console.log(res.data.data.token)
+            success(res) {
+              wx.setStorageSync('token', res.data.data.token); //将返回的token存入本地缓存
+              console.log(res.data.data.token);
+              if (res.data.data.hasObj) {
+                this.globalData.hasEvenLogin = true;
+                //调用接口获取用户信息
+                wx.request({
+                  url: 'http://localhost:3000/user/get/info', //用户存在用于获取其信息的接口
+                  method: 'GET',
+                  header: {
+                    'content-type': 'application/x-www-form-urlencoded'
+                  },
+                  data: {
+                    token: wx.getStorageSync('token')
+                  },
+                  success(res) {
+                    this.globalData.userInfo = res.data.data.user; //存储用户信息
+                  }
+                })
+              } else {
+                this.globalData.hasEvenLogin = false;
+              }
             }
           })
         }
       },
-      fail:res=>{
-        console.log('Login Failed',res.msg)
+      fail: res => {
+        console.log('Login Failed', res.msg)
       }
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    hasEvenLogin: null
   }
 })

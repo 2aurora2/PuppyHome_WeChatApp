@@ -9,4 +9,4 @@
 
 >2023/3/1
 
-* wx.login( )
+* wx.login()&wx.request()实现token的存取以及userInfo的获取

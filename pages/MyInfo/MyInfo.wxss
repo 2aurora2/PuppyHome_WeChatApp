@@ -1,1 +1,15 @@
-/* pages/MyInfo/MyInfo.wxss */
+.top {
+  width: 100%;
+}
+
+.top-image {
+  height: 550rpx;
+  width: 100%;
+  position: absolute;
+  top: 0rpx;
+}
+
+.top-image image {
+  height: 100%;
+  width: 100%;
+}

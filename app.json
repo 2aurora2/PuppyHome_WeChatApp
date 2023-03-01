@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/MuInfoSubPages/SetInfo/SetInfo",
     "pages/enter/enter",
     "pages/home/home",
     "pages/MyInfo/MyInfo",

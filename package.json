@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/2aurora2/PuppyHome_WeChatApp#readme",
   "dependencies": {
+    "cos-wx-sdk-v5": "^1.4.10",
     "weui-miniprogram": "^1.2.7"
   }
 }

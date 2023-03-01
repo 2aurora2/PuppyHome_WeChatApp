@@ -12,6 +12,7 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         if (res.code) {
           console.log(res.code)
+          var that = this;
           wx.request({
             url: 'http://localhost:3000/wx/login', //将res.code发送到服务器地址
             method: 'POST',
@@ -25,7 +26,7 @@ App({
               wx.setStorageSync('token', res.data.data.token); //将返回的token存入本地缓存
               console.log(res.data.data.token);
               if (res.data.data.hasObj) {
-                this.globalData.hasEvenLogin = true;
+                that.globalData.hasEvenLogin = true;
                 //调用接口获取用户信息
                 wx.request({
                   url: 'http://localhost:3000/user/get/info', //用户存在用于获取其信息的接口
@@ -37,12 +38,12 @@ App({
                     token: wx.getStorageSync('token')
                   },
                   success(res) {
-                    this.globalData.userInfo = res.data.data.user; //存储用户信息
+                    that.globalData.userInfo = res.data.data.user; //存储用户信息
                     console.log(res.data.data.user);
                   }
                 })
               } else {
-                this.globalData.hasEvenLogin = false;
+                that.globalData.hasEvenLogin = false;
               }
             }
           })

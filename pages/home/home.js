@@ -25,7 +25,6 @@ Page({
     dialogText: "首次登录请前往完善个人信息",
     isshow: ""
   },
-  
   onLoad() {
     this.setData({
       isshow: app.globalData.hasEvenLogin

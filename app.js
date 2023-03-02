@@ -44,6 +44,16 @@ App({
                 })
               } else {
                 that.globalData.hasEvenLogin = false;
+                // 默认用户信息
+                that.globalData.userInfo = {
+                  "nickName": "wx_user",
+                  "avatar": that.globalData.cdnHost + "userinfo/defaultAvatar.png",
+                  "realName": "wx_user",
+                  "age": 100,
+                  "gender": 1,
+                  "telephone": "12345678910",
+                  "authentication": 0 //用户身份默认为普通用户("0")
+                }
               }
             }
           })
@@ -55,7 +65,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null,
+    userInfo: {},
     hasEvenLogin: false,
     cdnHost: "https://puppyhome-1317060763.cos.ap-guangzhou.myqcloud.com/"
   }

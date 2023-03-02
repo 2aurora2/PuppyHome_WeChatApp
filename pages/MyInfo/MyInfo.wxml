@@ -3,4 +3,5 @@
     <!-- TopImage-color: #F5DEB3 -->
     <image src="/image/MyInfo/TopImage.png" mode="scaleToFill"></image>
   </view>
+  <view class="avatar" ><image src="{{AvatarUrl}}" style="border: {{bordeStyle}}"></image></view>
 </view>

@@ -14,3 +14,16 @@
   height: 100%;
   width: 100%;
 }
+
+.avatar{
+  position: absolute;
+  top: 500rpx;
+  left: 38%;
+}
+
+.avatar image{
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}

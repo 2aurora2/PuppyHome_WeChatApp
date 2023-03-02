@@ -1,66 +1,24 @@
-// pages/MyInfo/MyInfo.js
+const app = getApp();
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    AvatarUrl: app.globalData.userInfo.avatar,
+    bordeStyle: "",
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  onLoad() {
+    // 用户身份标识
+    if (app.globalData.userInfo.authentication == 0) {
+      this.setData({
+        bordeStyle: "5px lightslategray solid" //普通用户“灰色”标识
+      })
+    } else if (app.globalData.userInfo.authentication == 1) {
+      this.setData({
+        bordeStyle: "5px deepskyblue solid" //管理员“蓝色”标识
+      })
+    } else if (app.globalData.userInfo.authentication == 2) {
+      this.setData({
+        bordeStyle: "5px firebrick solid" //超级管理员“红色”标识
+      })
+    }
   }
 })

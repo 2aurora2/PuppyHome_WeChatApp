@@ -8,7 +8,7 @@ Page({
     name: "",
     tele: "",
     reason: "",
-    showSuccss: false,
+    showSuccess: false,
     successText: ""
   },
   ReadyApply() {
@@ -33,8 +33,9 @@ Page({
       console.log(this.data.name, this.data.tele, this.data.reason)
   },
   SubmitApply() {
+    var that = this;
     wx.request({
-      url: 'https://localhost:3000/apply/send',
+      url: 'http://localhost:3000/apply/send',
       method: 'POST',
       header: {
         'content-type': 'application/x-www-form-urlencoded'
@@ -42,18 +43,19 @@ Page({
       data: {
         token: wx.getStorageSync('token'),
         name: this.data.name,
-        tele: this.data.tele,
-        reason: this.data.reason
+        telephone: this.data.tele,
+        description: this.data.reason
       },
       success(res) {
         console.log(res.data),
-          this.setData({
+        that.setData({
             name: "",
             tele: "",
             reason: "",
             showSuccess: true,
-            successText: res.data.msg
-          })
+            successText: res.data.message
+        })
+        console.log(res.data.message)
       }
     })
   },

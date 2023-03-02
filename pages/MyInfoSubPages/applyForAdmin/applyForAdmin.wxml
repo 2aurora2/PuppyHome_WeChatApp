@@ -1,17 +1,17 @@
 <!-- 弹窗 -->
 <mp-dialog buttons="{{btns}}" mask="true" mask-closable="{{false}}" show="{{isshow}}" title="{{dialogText}}" bindbuttontap="ReadyApply"></mp-dialog>
-<mp-dialog buttons="{{btns}}" mask="true" mask-closable="{{false}}" show="{{showSuccss}}" title="{{successText}}" bindbuttontap="SuccessApply"></mp-dialog>
+<mp-dialog buttons="{{btns}}" mask="true" mask-closable="{{false}}" show="{{showSuccess}}" title="{{successText}}" bindbuttontap="SuccessApply"></mp-dialog>
 
-<view class="formPage" wx:if="{{!isshow}}">
+<view class="formPage" wx:if="{{!(isshow || showSuccess)}}">
   <view class="formTitle"><text>申请人信息</text></view>
   <view class="MsgForm">
     <view class="realName">
       <label>申请人</label>
-      <input class="nameInput" type="nickname" placeholder="请输入真实姓名" value="{{name}}" bindinput="nameInput"/>
+      <input class="nameInput" type="nickname" placeholder="请输入真实姓名" value="{{name}}" bindinput="nameInput" />
     </view>
     <view class="telephone">
       <label>手机号码</label>
-      <input class="teleInput" type="number" placeholder="请输入手机号码" value="{{tele}}" bindinput="teleInput"/>
+      <input class="teleInput" type="number" placeholder="请输入手机号码" value="{{tele}}" bindinput="teleInput" />
     </view>
     <view class="reason">
       <label>申请理由</label>

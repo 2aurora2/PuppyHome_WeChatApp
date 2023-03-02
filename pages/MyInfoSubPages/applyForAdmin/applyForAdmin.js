@@ -5,10 +5,61 @@ Page({
       text: "确认"
     }],
     isshow: true,
+    name: "",
+    tele: "",
+    reason: "",
+    showSuccss: false,
+    successText: ""
   },
-  ReadyApply(){
+  ReadyApply() {
     this.setData({
       isshow: false
     })
+  },
+  nameInput(e) {
+    this.setData({
+      name: e.detail.value
+    })
+  },
+  teleInput(e) {
+    this.setData({
+      tele: e.detail.value
+    })
+  },
+  reasonInput(e) {
+    this.setData({
+        reason: e.detail.value
+      }),
+      console.log(this.data.name, this.data.tele, this.data.reason)
+  },
+  SubmitApply() {
+    wx.request({
+      url: 'https://localhost:3000/apply/send',
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        token: wx.getStorageSync('token'),
+        name: this.data.name,
+        tele: this.data.tele,
+        reason: this.data.reason
+      },
+      success(res) {
+        console.log(res.data),
+          this.setData({
+            name: "",
+            tele: "",
+            reason: "",
+            showSuccess: true,
+            successText: res.data.msg
+          })
+      }
+    })
+  },
+  SuccessApply() {
+    wx.navigateBack({
+      delta: 1
+    });
   }
 })

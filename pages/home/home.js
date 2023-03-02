@@ -32,6 +32,9 @@ Page({
     })
   },
   ToSetUserInfo() {
+    this.setData({
+      isshow: true
+    })
     wx.navigateTo({
       url: "/pages/MyInfoSubPages/setUserInfo/setUserInfo",
       success(res) {

@@ -27,3 +27,13 @@
   border-radius: 50%;
   overflow: hidden;
 }
+
+.MyInfoList{
+  position: absolute;
+  top: 700rpx;
+  width: 100%;
+}
+
+.MyInfoList mp-cell{
+  width: 100%;
+}

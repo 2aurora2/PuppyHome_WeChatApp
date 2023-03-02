@@ -20,5 +20,16 @@ Page({
         bordeStyle: "5px firebrick solid" //超级管理员“红色”标识
       })
     }
+  },
+  ToSetUserInfo(){
+    wx.navigateTo({
+      url: "/pages/MyInfoSubPages/setUserInfo/setUserInfo",
+      success(res) {
+        console.log(res);
+      },
+      fail(res) {
+        console.log(res)
+      }
+    })
   }
 })

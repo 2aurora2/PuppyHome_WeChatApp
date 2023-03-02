@@ -3,5 +3,17 @@
     <!-- TopImage-color: #F5DEB3 -->
     <image src="/image/MyInfo/TopImage.png" mode="scaleToFill"></image>
   </view>
-  <view class="avatar" ><image src="{{AvatarUrl}}" style="border: {{bordeStyle}}"></image></view>
+  <view class="avatar">
+    <image src="{{AvatarUrl}}" style="border: {{bordeStyle}}"></image>
+  </view>
 </view>
+<mp-cells ext-class="MyInfoList">
+  <mp-cell class="setUserInfo" value="个人信息" hover="true" link="true" bindtap="ToSetUserInfo"></mp-cell>
+  <mp-cell class="mySelect" value="我的收藏" hover="true" link="true"></mp-cell>
+  <mp-cell class="myPublish" value="我的发布" hover="true" link="true"></mp-cell>
+  <mp-cell class="PublishManaga" value="发布审核" hover="true" link="true"></mp-cell>
+  <mp-cell class="applyForAdmin" value="管理员申请" hover="true" link="true"></mp-cell>
+  <mp-cell class="AdminAudit" value="管理员申请审核" hover="true" link="true"></mp-cell>
+  <mp-cell class="AdminManage" value="管理员管理" hover="true" link="true"></mp-cell>
+  <mp-cell class="aboutUs" value="关于我们" hover="true" link="true"></mp-cell>
+</mp-cells>

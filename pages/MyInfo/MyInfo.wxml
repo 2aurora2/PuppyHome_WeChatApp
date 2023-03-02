@@ -11,9 +11,12 @@
   <mp-cell class="setUserInfo" value="个人信息" hover="true" link="true" bindtap="ToSetUserInfo"></mp-cell>
   <mp-cell class="mySelect" value="我的收藏" hover="true" link="true" bindtap="ToMySelect"></mp-cell>
   <mp-cell class="myPublish" value="我的发布" hover="true" link="true" bindtap="ToMyPublish"></mp-cell>
-  <mp-cell class="PublishManaga" value="发布审核" hover="true" link="true" bindtap="ToPublishManaga"></mp-cell>
-  <mp-cell class="applyForAdmin" value="管理员申请" hover="true" link="true" bindtap="ToApplyForAdmin"></mp-cell>
-  <mp-cell class="AdminAudit" value="管理员申请审核" hover="true" link="true" bindtap="ToAdminAudit"></mp-cell>
-  <mp-cell class="AdminManage" value="管理员管理" hover="true" link="true" bindtap="ToAdminManage"></mp-cell>
+  <mp-cell class="PublishManaga" value="发布审核" hover="true" link="true" bindtap="ToPublishManaga" wx:if="{{isComAdmin||isSuperAdmin}}"></mp-cell>
+  <mp-cell class="applyForAdmin" value="管理员申请" hover="true" link="true" bindtap="ToApplyForAdmin" wx:if="{{!isSuperAdmin&&!isComAdmin}}"></mp-cell>
+  <block wx:if="{{isSuperAdmin}}">
+    <mp-cell class="AdminAudit" value="管理员申请审核" hover="true" link="true" bindtap="ToAdminAudit"></mp-cell>
+    <mp-cell class="AdminManage" value="管理员管理" hover="true" link="true" bindtap="ToAdminManage"></mp-cell>
+  </block>
+
   <mp-cell class="aboutUs" value="关于我们" hover="true" link="true" bindtap="ToAboutUs"></mp-cell>
 </mp-cells>

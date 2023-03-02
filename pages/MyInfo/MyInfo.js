@@ -4,6 +4,8 @@ Page({
   data: {
     AvatarUrl: "",
     bordeStyle: "",
+    isSuperAdmin: null,
+    isComAdmin: null,
   },
   onLoad() {
     // 用户身份标识
@@ -11,17 +13,23 @@ Page({
     if (app.globalData.userInfo.authentication == 0) {
       this.setData({
         AvatarUrl: app.globalData.userInfo.avatar,
-        bordeStyle: "5px lightslategray solid" //普通用户“灰色”标识
+        bordeStyle: "5px lightslategray solid", //普通用户“灰色”标识
+        isComAdmin: false,
+        isSuperAdmin: false
       })
     } else if (app.globalData.userInfo.authentication == 1) {
       this.setData({
         AvatarUrl: app.globalData.userInfo.avatar,
-        bordeStyle: "5px deepskyblue solid" //管理员“蓝色”标识
+        bordeStyle: "5px deepskyblue solid", //管理员“蓝色”标识
+        isComAdmin: true,
+        isSuperAdmin: false
       })
     } else if (app.globalData.userInfo.authentication == 2) {
       this.setData({
         AvatarUrl: app.globalData.userInfo.avatar,
-        bordeStyle: "5px firebrick solid" //超级管理员“红色”标识
+        bordeStyle: "5px firebrick solid", //超级管理员“红色”标识
+        isComAdmin: false,
+        isSuperAdmin: true
       })
     }
   },

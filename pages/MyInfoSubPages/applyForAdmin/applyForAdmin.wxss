@@ -1,1 +1,6 @@
-/* pages/MyInfoSubPages/applyForAdmin/applyForAdmin.wxss */
+.tips {
+  background-color: antiquewhite;
+  padding: 20rpx;
+  position: absolute;
+  bottom: 0;
+}

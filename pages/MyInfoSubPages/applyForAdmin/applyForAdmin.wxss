@@ -1,1 +1,42 @@
-/* pages/MyInfoSubPages/applyForAdmin/applyForAdmin.wxss */
+.tips {
+  background-color: antiquewhite;
+  padding: 20rpx;
+  position: absolute;
+  bottom: 0;
+}
+
+.formPage{
+  text-align: center;
+  margin-top: 100rpx;
+}
+
+.formTitle{
+  font-size: 50rpx;
+  text-shadow: 0 0 0 #000;
+}
+.MsgForm{
+  width: 80%;
+  text-align: left;
+  margin: 0 auto;
+  padding: 30rpx;
+}
+label{
+  font-size: large;
+}
+.MsgForm view{
+  margin-top: 30rpx;
+}
+.MsgForm view input{
+  width: 95%;
+  margin-top: 25rpx;
+  border: 1rpx black solid;
+  border-radius: 10rpx;
+  padding: 20rpx;
+}
+.MsgForm view textarea{
+  width: 95%;
+  margin-top: 25rpx;
+  border: 1rpx black solid;
+  border-radius: 10rpx;
+  padding: 20rpx;
+}

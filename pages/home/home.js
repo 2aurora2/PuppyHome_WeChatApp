@@ -23,7 +23,13 @@ Page({
       text: "前往"
     }],
     dialogText: "首次登录请前往完善个人信息",
-    isshow: app.globalData.hasEvenLogin
+    isshow: ""
+  },
+  
+  onLoad() {
+    this.setData({
+      isshow: app.globalData.hasEvenLogin
+    })
   },
   ToSetUserInfo() {
     wx.navigateTo({

@@ -31,5 +31,82 @@ Page({
         console.log(res)
       }
     })
+  },
+  ToMySelect(){
+    wx.navigateTo({
+      url: "/pages/MyInfoSubPages/mySelect/mySelect",
+      success(res) {
+        console.log(res);
+      },
+      fail(res) {
+        console.log(res)
+      }
+    })
+  },
+  ToMyPublish(){
+    wx.navigateTo({
+      url: "/pages/MyInfoSubPages/myPublish/myPublish",
+      success(res) {
+        console.log(res);
+      },
+      fail(res) {
+        console.log(res)
+      }
+    })
+  },
+  ToPublishManaga(){
+    wx.navigateTo({
+      url: "/pages/MyInfoSubPages/PublishManaga/PublishManaga",
+      success(res) {
+        console.log(res);
+      },
+      fail(res) {
+        console.log(res)
+      }
+    })
+  },
+  ToApplyForAdmin(){
+    wx.navigateTo({
+      url: "/pages/MyInfoSubPages/applyForAdmin/applyForAdmin",
+      success(res) {
+        console.log(res);
+      },
+      fail(res) {
+        console.log(res)
+      }
+    })
+  },
+  ToAdminAudit(){
+    wx.navigateTo({
+      url: "/pages/MyInfoSubPages/adminAudit/adminAudit",
+      success(res) {
+        console.log(res);
+      },
+      fail(res) {
+        console.log(res)
+      }
+    })
+  },
+  ToAdminManage(){
+    wx.navigateTo({
+      url: "/pages/MyInfoSubPages/adminManage/adminManage",
+      success(res) {
+        console.log(res);
+      },
+      fail(res) {
+        console.log(res)
+      }
+    })
+  },
+  ToAboutUs(){
+    wx.navigateTo({
+      url: "/pages/MyInfoSubPages/aboutUs/aboutUs",
+      success(res) {
+        console.log(res);
+      },
+      fail(res) {
+        console.log(res)
+      }
+    })
   }
 })

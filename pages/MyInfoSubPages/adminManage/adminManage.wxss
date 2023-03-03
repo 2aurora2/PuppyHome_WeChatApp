@@ -1,1 +1,12 @@
-/* pages/MyInfoSubPages/adminManage/adminManage.wxss */
+.pageTitle {
+  width: 100%;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.pageTitle text {
+  font-size: 50rpx;
+  color: #1d1919;
+  font-family: "楷体";
+  font-weight: bolder;
+}

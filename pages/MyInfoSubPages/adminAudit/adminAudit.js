@@ -1,6 +1,5 @@
 Page({
   data: {
-    isShowDetails: false,
     applicators: []
   },
   onLoad() {

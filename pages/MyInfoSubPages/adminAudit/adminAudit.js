@@ -63,7 +63,8 @@ Page({
         userId: e.currentTarget.dataset.id
       },
       success(res){
-        console.log(res)
+        console.log(res);
+        this.onLoad();
       },
       fail(res){
         console.log(res)
@@ -84,7 +85,8 @@ Page({
         userId: e.currentTarget.dataset.id
       },
       success(res){
-        console.log(res)
+        console.log(res);
+        this.onLoad();
       },
       fail(res){
         console.log(res)

@@ -1,1 +1,51 @@
-/* pages/MyInfoSubPages/adminAudit/adminAudit.wxss */
+.pageTitle {
+  width: 100%;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.pageTitle text {
+  font-size: 50rpx;
+  color: #1d1919;
+  font-family: "楷体";
+  font-weight: bolder;
+}
+
+.applyitem {
+  width: 95%;
+  background: #ffffff;
+  box-shadow: -6rpx 0rpx 29rpx 0rpx #e7e7e7;
+  border-radius: 20rpx;
+  margin: 20rpx auto;
+}
+
+.icon {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 40rpx;
+  padding: 10rpx;
+}
+
+.msgTitle {
+  font-family: "楷体";
+  color: #1d1919;
+  font-weight: bolder;
+}
+
+.applyitem .applyMsg {
+  font-family: "楷体";
+  color: #1d1919;
+}
+.resBtn{
+  display: flex;
+  justify-content: space-around;
+  padding: 10rpx;
+}
+.applyTitle{
+  padding: 10rpx;
+  font-size: large;
+}
+.msgdetails{
+  padding: 10rpx;
+}

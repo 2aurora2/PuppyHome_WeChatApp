@@ -4,7 +4,7 @@ Page({
   data: {
     AvatarUrl: "",
     bordeStyle: "",
-    isSuperAdmin: null,
+    isSuperAdmin: true,
     isComAdmin: null,
   },
   onLoad() {

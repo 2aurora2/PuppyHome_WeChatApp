@@ -1,66 +1,94 @@
-// pages/MyInfoSubPages/adminAudit/adminAudit.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    isShowDetails: false,
+    applicators: []
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
+  onLoad() {
+    wx.request({
+      url: 'http:localhost:3000/apply/show/all',
+      method: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        token: wx.getStorageSync('token')
+      },
+      success(res) {
+        this.setData({
+          applicators: res.data.data.applications
+        })
+        // 新增属性isshow初始化为false不展示
+        var applyArray = this.data.applicators;
+        for (var i = 0; i < applyArray.length; i++) {
+          applyArray[i].isshow = false;
+          applyArray[i].iconUrl = "/image/MyInfo/down.png";
+        }
+        this.setData({
+          applicators: applyArray
+        })
+        console.log(this.data.applicators)
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+  //折叠展开
+  ShowDetails(e) {
+    var applyArray = this.data.applicators;
+    for (var i = 0; i < applyArray.length; i++) {
+      if (applyArray[i].id === e.currentTarget.dataset.id) {
+        if (applyArray[i].isshow === false) {
+          applyArray[i].isshow = true;
+          applyArray[i].iconUrl = "/image/MyInfo/up.png"
+        } else {
+          applyArray[i].isshow = false;
+          applyArray[i].iconUrl = "/image/MyInfo/down.png"
+        }
+        break;
+      }
+    }
+    this.setData({
+      applicators: applyArray
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
+  // 接受申请Func
+  acceptApply(e) {
+    console.log(e.currentTarget.dataset.id)
+    wx.request({
+      url: 'http:localhost:3000/apply/accept',
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        token: wx.getStorageSync('token'),
+        userId: e.currentTarget.dataset.id
+      },
+      success(res){
+        console.log(res)
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  // 拒绝申请Func
+  rejectApply(e){
+    console.log(e.currentTarget.dataset.id)
+    wx.request({
+      url: 'http:localhost:3000/apply/reject',
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        token: wx.getStorageSync('token'),
+        userId: e.currentTarget.dataset.id
+      },
+      success(res){
+        console.log(res)
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
   }
 })

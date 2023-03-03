@@ -1,1 +1,20 @@
-<text>管理审核</text>
+<view class="pageTitle"><text>申请列表</text></view>
+<view class="applyitem" wx:for="{{applicators}}" wx:key="id">
+  <view class="applyTitle" bindtap="ShowDetails" data-id='{{item.id}}'>
+    <text class="msgTitle">申请人：</text>
+    <text class="applyMsg">{{item.name}}</text>
+    <image class="icon" src="{{item.iconUrl}}"></image>
+  </view>
+  <view class="applyDetails" wx:if="{{item.isshow}}">
+    <view class="msgdetails">
+      <view class="msgTitle">手机号码：</view>
+      <text class="applyMsg">{{item.telephone}}</text>
+      <view class="msgTitle">申请理由：</view>
+      <text class="applyMsg">{{item.description}}</text>
+    </view>
+    <view class="resBtn">
+      <button class="acceptBtn" type="primary" size="mini" bindtap="acceptApply" data-id="{{item.userId}}">同意</button>
+      <button class="rejectBtn" type="warn" size="mini" bindtap="rejectApply" data-id="{{item.userId}}">拒绝</button>
+    </view>
+  </view>
+</view>

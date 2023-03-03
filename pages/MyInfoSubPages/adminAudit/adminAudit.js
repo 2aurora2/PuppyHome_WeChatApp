@@ -4,8 +4,9 @@ Page({
     applicators: []
   },
   onLoad() {
+    var that = this;
     wx.request({
-      url: 'http:localhost:3000/apply/show/all',
+      url: 'http://localhost:3000/apply/show/all',
       method: 'GET',
       header: {
         'content-type': 'application/x-www-form-urlencoded'
@@ -14,19 +15,23 @@ Page({
         token: wx.getStorageSync('token')
       },
       success(res) {
-        this.setData({
+        console.log(res.data)
+        that.setData({
           applicators: res.data.data.applications
         })
         // 新增属性isshow初始化为false不展示
-        var applyArray = this.data.applicators;
+        var applyArray = that.data.applicators;
         for (var i = 0; i < applyArray.length; i++) {
           applyArray[i].isshow = false;
           applyArray[i].iconUrl = "/image/MyInfo/down.png";
         }
-        this.setData({
+        that.setData({
           applicators: applyArray
         })
-        console.log(this.data.applicators)
+        console.log(that.data.applicators)
+      },
+      fail(res) {
+        console.log(res.errMsg)
       }
     })
   },
@@ -52,8 +57,9 @@ Page({
   // 接受申请Func
   acceptApply(e) {
     console.log(e.currentTarget.dataset.id)
+    var that = this;
     wx.request({
-      url: 'http:localhost:3000/apply/accept',
+      url: 'http://localhost:3000/apply/accept',
       method: 'POST',
       header: {
         'content-type': 'application/x-www-form-urlencoded'
@@ -62,20 +68,21 @@ Page({
         token: wx.getStorageSync('token'),
         userId: e.currentTarget.dataset.id
       },
-      success(res){
+      success(res) {
         console.log(res);
-        this.onLoad();
+        that.onLoad();
       },
-      fail(res){
+      fail(res) {
         console.log(res)
       }
     })
   },
   // 拒绝申请Func
-  rejectApply(e){
-    console.log(e.currentTarget.dataset.id)
+  rejectApply(e) {
+    console.log(e.currentTarget.dataset.id);
+    var that = this;
     wx.request({
-      url: 'http:localhost:3000/apply/reject',
+      url: 'http://localhost:3000/apply/reject',
       method: 'POST',
       header: {
         'content-type': 'application/x-www-form-urlencoded'
@@ -84,11 +91,11 @@ Page({
         token: wx.getStorageSync('token'),
         userId: e.currentTarget.dataset.id
       },
-      success(res){
+      success(res) {
         console.log(res);
-        this.onLoad();
+        that.onLoad();
       },
-      fail(res){
+      fail(res) {
         console.log(res)
       }
     })

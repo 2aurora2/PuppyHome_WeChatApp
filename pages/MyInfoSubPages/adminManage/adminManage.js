@@ -42,10 +42,6 @@ Page({
       currentItemId: e.currentTarget.dataset.id
     })
   },
-  // 弹窗关闭页面刷新
-  Refresh() {
-    this.onLoad();
-  },
   ChooseRes(e) {
     if (e.detail.item.text === "取消") {
       this.setData({

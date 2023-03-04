@@ -13,4 +13,4 @@
 </view>
 
 <!-- 弹窗 -->
-<mp-dialog buttons="{{btns}}" mask="true" mask-closable="{{false}}" show="{{isShowDialog}}" title="{{dialogText}}" bindbuttontap="ChooseRes" bindclose="Refresh"></mp-dialog>
+<mp-dialog buttons="{{btns}}" mask="true" mask-closable="{{false}}" show="{{isShowDialog}}" title="{{dialogText}}" bindbuttontap="ChooseRes"></mp-dialog>

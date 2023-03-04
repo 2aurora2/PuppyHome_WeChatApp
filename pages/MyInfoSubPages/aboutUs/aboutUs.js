@@ -1,66 +1,16 @@
-// pages/MyInfoSubPages/aboutUs/aboutUs.js
+const HtmlTitle = '<h1 style="color: #483D8B">修勾之家</h1>'
+const HtmlSubTitle1 = '<h3 style="color: #483D8B">一、平台介绍</h3>'
+const HtmlSubTitle2 = '<h3 style="color: #483D8B">二、用户规范</h3>'
+const HtmlSubTitle21 = '<h3 style="color: #483D8B">2.1 普通用户</h3>'
+const HtmlSubTitle22 = '<h3 style="color: #483D8B">2.2 普通管理员</h3>'
+const HtmlSubTitle23 = '<h3 style="color: #483D8B">2.3 超级管理员</h3>'
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    HtmlTitle,
+    HtmlSubTitle1,
+    HtmlSubTitle2,
+    HtmlSubTitle21,
+    HtmlSubTitle22,
+    HtmlSubTitle23
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  }
 })

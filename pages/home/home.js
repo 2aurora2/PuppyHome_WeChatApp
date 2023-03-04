@@ -2,10 +2,7 @@
 const app = getApp();
 Page({
   data: {
-    background: [{
-        id: 0,
-        url: app.globalData.cdnHost + "swiper/img01.jpg"
-      },
+    background: [
       {
         id: 1,
         url: app.globalData.cdnHost + "swiper/img02.jpg"

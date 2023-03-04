@@ -1,1 +1,31 @@
-/* pages/MyInfoSubPages/aboutUs/aboutUs.wxss */
+.Container{
+  text-align: center;
+  width: 95%;
+  margin: 0 auto;
+}
+.Title{
+  display: flex;
+  margin-top: 15rpx;
+}
+.Introdution text{
+  display: flex;
+  padding: 2rpx;
+  text-align: left;
+  margin-top: 10rpx;
+}
+.UserRules text{
+  display: flex;
+  padding: 2rpx;
+  text-align: left;
+  margin-top: 10rpx;
+}
+.SubTitle{
+  display: flex;
+  margin-top: 10rpx;
+}
+
+.Container text{
+  font-weight: bolder;
+  margin-top: 20rpx;
+  display: flex;
+}

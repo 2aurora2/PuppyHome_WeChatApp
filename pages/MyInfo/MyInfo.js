@@ -5,7 +5,7 @@ Page({
     AvatarUrl: "",
     bordeStyle: "",
     isSuperAdmin: true,
-    isComAdmin: null,
+    isComAdmin: false,
   },
   onLoad() {
     // 用户身份标识

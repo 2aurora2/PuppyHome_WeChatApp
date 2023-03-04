@@ -10,3 +10,18 @@
   font-family: "楷体";
   font-weight: bolder;
 }
+
+.AdminList{
+  margin-top: 20rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+
+.adminAvatar{
+  width: 100rpx;
+  height: 100rpx;
+  padding: 10rpx;
+}
+.adminName{
+  padding: 20rpx;
+}

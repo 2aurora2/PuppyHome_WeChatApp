@@ -1,1 +1,16 @@
+<view wx:if="{{!isShowDialog}}">
+  <view class="pageTitle"><text>管理员</text></view>
+  <view class="AdminList">
+    <view class="AdminItem" wx:for="{{adminList}}" wx:key="id">
+      <mp-slideview buttons="{{btn}}" show="{{false}}" bindbuttontap="CheckSureDelete" data-id="{{item.id}}">
+        <view class="adminMsg">
+          <image class="adminAvatar" src="{{item.avatar}}" style="vertical-align: middle;"></image>
+          <text class="adminName">{{item.nickName}}</text>
+        </view>
+      </mp-slideview>
+    </view>
+  </view>
+</view>
 
+<!-- 弹窗 -->
+<mp-dialog buttons="{{btns}}" mask="true" mask-closable="{{false}}" show="{{isShowDialog}}" title="{{dialogText}}" bindbuttontap="ChooseRes" bindclose="Refresh"></mp-dialog>

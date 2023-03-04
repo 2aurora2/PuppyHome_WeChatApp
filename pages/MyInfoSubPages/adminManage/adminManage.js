@@ -1,66 +1,81 @@
-// pages/MyInfoSubPages/adminManage/adminManage.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    currentItemId: null,
+    dialogText: "是否确认删除此管理员？",
+    isShowDialog: false,
+    btn: [{
+      type: "warn",
+      text: "移除",
+      data: null
+    }],
+    btns: [{
+      text: "确认"
+    }, {
+      text: "取消"
+    }],
+    adminList: []
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
+  onLoad() {
+    var that = this;
+    wx.request({
+      url: 'http://localhost:3000/admin/general',
+      method: "GET",
+      data: {
+        token: wx.getStorageSync('token')
+      },
+      success(res) {
+        console.log(res.data);
+        that.setData({
+          adminList: res.data.data.generalAdmin
+        })
+      },
+      fail(res) {
+        console.log(res.errMsg)
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+  // 是否确认删除的弹窗
+  CheckSureDelete(e) {
+    console.log(e)
+    this.setData({
+      isShowDialog: true,
+      currentItemId: e.currentTarget.dataset.id
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
+  // 弹窗关闭页面刷新
+  Refresh() {
+    this.onLoad();
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  ChooseRes(e) {
+    if (e.detail.item.text === "取消") {
+      this.setData({
+        isShowDialog: false
+      })
+    } else {
+      var that = this;
+      wx.request({
+        url: 'http://localhost:3000/apply/delete/admin',
+        method: 'POST',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        data: {
+          token: wx.getStorageSync('token'),
+          userId : that.data.currentItemId
+        },
+        success(res){
+          that.setData({
+            isShowDialog: false
+          });
+          console.log(res.data)
+        },
+        fail(res){
+          that.setData({
+            isShowDialog: false
+          });
+          console.log(res.data)
+        }
+      })
+    }
   }
 })

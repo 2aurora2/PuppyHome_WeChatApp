@@ -1,4 +1,5 @@
 <view class="homePage" wx:if="{{isshow}}">
+  <!-- 轮播图 -->
   <swiper class="swiper" indicator-dots="true" indicator-color="#ffffff" indicator-active-color="#D3D3D3" autoplay="true" interval="3000" circular="true">
     <block wx:for="{{background}}" wx:key="id">
       <swiper-item>
@@ -8,6 +9,24 @@
       </swiper-item>
     </block>
   </swiper>
+  <!-- 功能卡片 -->
+  <view class="FuncCardsBox">
+    <view class="FuncCards">
+      <view class="Card" bindtap="ToPublish">
+        <image src="/image/Home/icons/publish.png"></image>
+        <view class="iconText">发布</view>
+      </view>
+      <view class="Card" bindtap="ToSearch">
+        <image src="/image/Home/icons/search.png"></image>
+        <view class="iconText">搜索</view>
+      </view>
+      <view class="Card" bindtap="ToIdentify">
+        <image src="/image/Home/icons/photo.png"></image>
+        <view class="iconText">拍照识修勾</view>
+      </view>
+    </view>
+  </view>
+  
 </view>
 
 <!-- 弹窗 -->

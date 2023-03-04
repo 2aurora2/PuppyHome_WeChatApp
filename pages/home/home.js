@@ -1,4 +1,3 @@
-// pages/home/home.js
 const app = getApp();
 Page({
   data: {
@@ -40,5 +39,20 @@ Page({
         console.log(res)
       }
     })
-  }
+  },
+  ToPublish(){
+    wx.navigateTo({
+      url: "/pages/HomeSubPage/Publish/Publish"
+    })
+  },
+  ToSearch(){
+    wx.navigateTo({
+      url: "/pages/HomeSubPage/Search/Search"
+    })
+  },
+  ToIdentify(){
+    wx.navigateTo({
+      url: "/pages/HomeSubPage/Identify/Identify"
+    })
+  },
 })

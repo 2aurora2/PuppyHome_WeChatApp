@@ -1,5 +1,5 @@
 .swiper{
-  height: 600rpx;
+  height: 650rpx;
 }
 swiper-item{
   height: 100%;
@@ -10,4 +10,36 @@ swiper-item{
 .swiper-item image{
   width: 100%;
   height: 100%;
+}
+
+.FuncCardsBox{
+  width: 100%;
+  position: absolute;
+  top: 600rpx;
+}
+
+.FuncCards{
+  display: flex;
+  justify-content: space-around;
+}
+
+.FuncCards .Card{
+  background: #F6F6F6 !important;
+  text-align: center;
+  border: 3px gainsboro solid;
+  width: 220rpx;
+  background-color: white;
+  border-radius: 20rpx;
+  box-shadow: 5rpx -5rpx 10rpx #D6D6D6;
+}
+
+.FuncCards view image{
+  padding: 20rpx;
+  height: 100rpx;
+  width: 100rpx;
+}
+
+.iconText{
+  padding: 5rpx;
+  font-size: large;
 }

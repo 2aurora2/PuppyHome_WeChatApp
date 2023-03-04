@@ -25,3 +25,4 @@
 
 * 完成AdminManage管理员管理页面
 * 完成AboutUs页面
+* 完成Home页面中三个主要功能卡片展示

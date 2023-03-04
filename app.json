@@ -8,7 +8,6 @@
     "pages/MyInfoSubPages/setUserInfo/setUserInfo",
     "pages/MyInfoSubPages/mySelect/mySelect",
     "pages/MyInfoSubPages/myPublish/myPublish",
-    "pages/MyInfoSubPages/PublishManaga/PublishManaga",
     "pages/MyInfoSubPages/applyForAdmin/applyForAdmin",
     "pages/MyInfoSubPages/adminAudit/adminAudit",
     "pages/MyInfoSubPages/adminManage/adminManage",

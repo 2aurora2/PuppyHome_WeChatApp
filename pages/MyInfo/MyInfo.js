@@ -66,17 +66,6 @@ Page({
       }
     })
   },
-  ToPublishManaga(){
-    wx.navigateTo({
-      url: "/pages/MyInfoSubPages/PublishManaga/PublishManaga",
-      success(res) {
-        console.log(res);
-      },
-      fail(res) {
-        console.log(res)
-      }
-    })
-  },
   ToApplyForAdmin(){
     wx.navigateTo({
       url: "/pages/MyInfoSubPages/applyForAdmin/applyForAdmin",

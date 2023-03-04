@@ -64,12 +64,14 @@ Page({
           userId : that.data.currentItemId
         },
         success(res){
+          that.onLoad();
           that.setData({
             isShowDialog: false
           });
           console.log(res.data)
         },
         fail(res){
+          that.onLoad();
           that.setData({
             isShowDialog: false
           });

@@ -1,1 +1,92 @@
-/* pages/HomeSubPage/Publish/Publish.wxss */
+.pageContain {
+  text-align: center;
+}
+
+.pageContain .pageTitle {
+  width: 95%;
+  margin: 10rpx auto;
+}
+
+.pageSub {
+  width: 95%;
+  margin: 10rpx auto;
+  text-align: left;
+}
+
+.pageSub .publishTitle {
+  border: 1px gainsboro solid;
+  padding: 10rpx;
+  border-radius: 10rpx;
+}
+
+.dogCard {
+  border: 1px gainsboro solid;
+  padding: 10rpx;
+  border-radius: 10rpx;
+}
+
+.dogMsg .nickName {
+  width: max-content;
+}
+
+.dogMsg input {
+  float: right;
+  border-bottom: 1px gainsboro solid;
+}
+
+.dogMsg .gender {
+  width: max-content;
+}
+
+.gender view{
+  float: right;
+}
+
+.radiogroup {
+  display: flex;
+  flex-direction: row;
+}
+
+.radiogroup .radiobox {
+  display: flex;
+  flex-direction: row;
+}
+
+.dogMsg .age {
+  width: max-content;
+}
+
+.age label{
+  float: left;
+  margin-top: 5rpx;
+}
+
+.age view{
+  float: right;
+  border-bottom: 1px gainsboro solid;
+}
+
+.dogMsg .type {
+  width: max-content;
+}
+
+.type label{
+  float: left;
+  margin-top: 5rpx;
+}
+
+.type view{
+  float: right;
+  border-bottom: 1px gainsboro solid;
+}
+
+.articleDesc{
+  width: 100%;
+  border: 1px gainsboro solid;
+  border-radius: 10rpx;
+  padding: 10rpx;
+  /* 解决textarea的width设置100%超出父元素宽度 */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}

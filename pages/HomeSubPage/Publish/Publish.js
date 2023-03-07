@@ -56,20 +56,20 @@ Page({
       uplaodFile: this.uplaodFile.bind(this)
     })
     // 获取狗的品种信息
-    var that = this;
-    wx.request({
-      url: 'http://localhost:3000/dogs/type',
-      method: 'GET',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      data: {},
-      success(res) {
-        that.setData({
-          dogType: res.data.data.typeList
-        })
-      }
-    })
+    // var that = this;
+    // wx.request({
+    //   url: 'http://localhost:3000/dogs/type',
+    //   method: 'GET',
+    //   header: {
+    //     'content-type': 'application/x-www-form-urlencoded'
+    //   },
+    //   data: {},
+    //   success(res) {
+    //     that.setData({
+    //       dogType: res.data.data.typeList
+    //     })
+    //   }
+    // })
   },
   dogAgeChoose(e) {
     this.setData({
@@ -114,8 +114,7 @@ Page({
 
       for (var i = 0; i < tempFilePaths.length; i++) {
         let filePath = tempFilePaths[i] //原名
-        let cloudPath = new Date().getTime() + '-' + i + filePath.match(/\.[^.]+?$/)[0] //云存储文件名
-
+        let cloudPath = new Date().getTime() + '-' + filePath.substr(filePath.lastIndexOf('/') + 1) //云存储文件名
         cos.postObject({
           Bucket: 'puppyhome-1317060763', //对象储存桶的名称
           Region: 'ap-guangzhou', //所属地域

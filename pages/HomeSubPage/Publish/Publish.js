@@ -9,7 +9,6 @@ var cos = new COS({
   SimpleUploadMethod: 'putObject', // 强烈建议，高级上传、批量上传内部对小文件做简单上传时使用putObject,sdk版本至少需要v1.3.0
 });
 
-
 const pageTitle = '<h1 style="color: #708090">领养公告发布</h1>'
 const pageSubTitle1 = '<h2 style="color: #708090">标题</h2>'
 const pageSubTitle2 = '<h2 style="color: #708090">修勾信息</h2>'
@@ -105,7 +104,6 @@ Page({
   // 图片上传相关函数
   // Func01：uplaodFile，必须返回Promise
   uplaodFile(files) {
-    console.log(111)
     //Promise的callback里面必须resolve({urls})表示成功，否则表示失败
     return new Promise((resolve, reject) => {
       const tempFilePaths = files.tempFilePaths;
@@ -175,9 +173,6 @@ Page({
   },
   publishArticle() {
     var that = this;
-    this.setData({
-      isShowDialog: true
-    })
     wx.request({
       url: 'http://localhost:3000/article/create',
       method: 'POST',
@@ -190,13 +185,16 @@ Page({
         description: that.data.description,
         dogName: that.data.dogName,
         gender: that.data.dogGender,
-        photo: that.data.photo[0],
+        photo: that.data.photo[0].url,
         publishTime: new Date(),
         title: that.data.title,
         type: that.data.dogType[that.data.typeIdx]
       },
       success(res) {
         console.log(res);
+        that.setData({
+          isShowDialog: true
+        })
       },
       fail(res) {
         console.log(res)

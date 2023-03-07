@@ -3,6 +3,7 @@
   "usingComponents": {
     "mp-uploader": "weui-miniprogram/uploader/uploader",
     "mp-checkbox-group": "weui-miniprogram/checkbox-group/checkbox-group",
-    "mp-checkbox": "weui-miniprogram/checkbox/checkbox"
+    "mp-checkbox": "weui-miniprogram/checkbox/checkbox",
+    "mp-dialog": "weui-miniprogram/dialog/dialog"
   }
 }

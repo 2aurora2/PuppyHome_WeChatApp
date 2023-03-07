@@ -44,7 +44,6 @@ App({
                   }
                 })
               } else {
-                console.log(11111)
                 that.globalData.hasEvenLogin = false;
                 // 默认用户信息
                 that.globalData.userInfo = {

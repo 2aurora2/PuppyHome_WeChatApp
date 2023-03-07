@@ -16,9 +16,11 @@ const pageSubTitle2 = '<h2 style="color: #708090">修勾信息</h2>'
 const pageSubTitle3 = '<h2 style="color: #708090">具体领养描述</h2>'
 Page({
   data: {
-    dialogText: '发布成功',
-    btns: ['确认'],
-    isShowDialog : false,
+    dialogText: "发布成功",
+    btns: [{
+      text: "确认"
+    }],
+    isShowDialog: false,
     pageTitle,
     pageSubTitle1,
     pageSubTitle2,
@@ -28,7 +30,7 @@ Page({
     photo: [],
     dogName: "",
     age: "",
-    gender: 0,
+    dogGender: 0,
     //mp-uploader
     sizeType: ['original'], //压缩上传,可以是['original', 'compressed']
     sourceType: ['album', 'camera'], //相册,或拍照
@@ -97,7 +99,7 @@ Page({
   },
   getGender(e) {
     this.setData({
-      gender: e.detail.value
+      dogGender: e.detail.value
     })
   },
   // 图片上传相关函数
@@ -173,6 +175,9 @@ Page({
   },
   publishArticle() {
     var that = this;
+    this.setData({
+      isShowDialog: true
+    })
     wx.request({
       url: 'http://localhost:3000/article/create',
       method: 'POST',
@@ -184,17 +189,17 @@ Page({
         age: that.data.ageIdx,
         description: that.data.description,
         dogName: that.data.dogName,
-        gender: that.data.gender,
+        gender: that.data.dogGender,
         photo: that.data.photo[0],
         publishTime: new Date(),
         title: that.data.title,
-        type: that.data.dogType[typeIdx]
+        type: that.data.dogType[that.data.typeIdx]
       },
       success(res) {
         console.log(res);
-        that.setData({
-          isShowDialog: true,
-        })
+      },
+      fail(res) {
+        console.log(res)
       }
     })
   }

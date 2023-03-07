@@ -1,3 +1,6 @@
+<!-- 弹窗 -->
+<mp-dialog buttons="{{btns}}" mask="true" mask-closable="{{false}}" show="{{isShowDialog}}" title="{{dialogText}}" bindbuttontap="publishRes"></mp-dialog>
+
 <view class="pageContain" wx:if="{{!isShowDialog}}">
   <view class="pageTitle">
     <rich-text nodes="{{pageTitle}}"></rich-text>
@@ -56,5 +59,3 @@
   </view>
 </view>
 
-<!-- 弹窗 -->
-<mp-dialog buttons="{{btns}}" mask="true" mask-closable="{{false}}" show="{{isShowDialog}}" title="{{dialogText}}" bindbuttontap="publishRes"></mp-dialog>

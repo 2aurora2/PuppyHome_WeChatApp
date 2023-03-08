@@ -40,6 +40,9 @@
         </view>
       </view>
     </view>
+    <view class="noArticle" wx:if="{{currentNum === 0?true:false}}">
+      <text>Tips：暂无其他用户发布的领养公告，敬请期待……</text>
+    </view>
   </view>
 </view>
 

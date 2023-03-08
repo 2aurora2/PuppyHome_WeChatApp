@@ -103,3 +103,12 @@ swiper-item {
   padding: 20rpx;
   vertical-align: middle;
 }
+
+.noArticle{
+  margin: 10rpx auto;
+  width: 95%;
+  background-color: #f1d4d8 !important;
+  border-left: 5rpx #DC143C solid;
+  padding: 10rpx;
+  border-radius: 10rpx;
+}

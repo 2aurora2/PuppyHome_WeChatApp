@@ -8,6 +8,7 @@
     "pages/HomeSubPage/Publish/Publish",
     "pages/HomeSubPage/Search/Search",
     "pages/HomeSubPage/Identify/Identify",
+    "pages/HomeSubPage/ArticleDetails/ArticleDetails",
     "pages/MyInfoSubPages/setUserInfo/setUserInfo",
     "pages/MyInfoSubPages/mySelect/mySelect",
     "pages/MyInfoSubPages/myPublish/myPublish",

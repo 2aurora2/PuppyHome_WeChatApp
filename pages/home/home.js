@@ -49,7 +49,7 @@ Page({
           obj['id'] = articles[i].id;
           obj['title'] = articles[i].title;
           var tmpTime = articles[i].publishTime;
-          obj['publishTime'] = util.js_date_time(tmpTime.substr(0,tmpTime.length-3)); // 时间戳转换
+          obj['publishTime'] = util.js_date_time(tmpTime / 1000); // 时间戳转换
           obj['photo'] = dogs[i].photo;
           finalList.push(obj);
         }
@@ -126,9 +126,9 @@ Page({
       url: "/pages/HomeSubPage/Identify/Identify"
     })
   },
-  getArticleDetails(e){
+  getArticleDetails(e) {
     wx.navigateTo({
-      url: '/pages/HomeSubPage/ArticleDetails/ArticleDetails?id='+e.currentTarget.dataset.id,
+      url: '/pages/HomeSubPage/ArticleDetails/ArticleDetails?id=' + e.currentTarget.dataset.id,
     })
   }
 })

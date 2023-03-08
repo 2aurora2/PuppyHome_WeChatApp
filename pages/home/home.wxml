@@ -32,7 +32,7 @@
       <text>领养公告</text>
     </view>
     <view class="articleList">
-      <view class="articleItem" wx:for="{{currentArticleList}}" wx:key="id">
+      <view class="articleItem" wx:for="{{currentArticleList}}" wx:key="id" bindtap="getArticleDetails" data-id="{{item.id}}">
         <image class="itemImage" src="{{item.photo}}"></image>
         <view class="articleMsg">
           <text class="articleTitle">{{item.title}}\n</text>

@@ -125,4 +125,9 @@ Page({
       url: "/pages/HomeSubPage/Identify/Identify"
     })
   },
+  getArticleDetails(e){
+    wx.navigateTo({
+      url: '/pages/HomeSubPage/ArticleDetails/ArticleDetails?id='+e.currentTarget.dataset.id,
+    })
+  }
 })

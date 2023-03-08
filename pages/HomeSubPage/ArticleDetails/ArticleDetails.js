@@ -39,8 +39,8 @@ Page({
         that.setData({
           articleDetails: res.data.data.article,
           dogsDetails: res.data.data.dog,
-          dogAge: that.data.ageList[res.data.data.dog[age]],
-          dogGender: that.data.genderList[res.data.data.dog[gender]],
+          dogAge: that.data.ageList[res.data.data.dog.age],
+          dogGender: that.data.genderList[res.data.data.dog.gender],
         })
       }
     })

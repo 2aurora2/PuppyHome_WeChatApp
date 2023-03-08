@@ -1,5 +1,12 @@
 var util = require("../../utils/util.js")
 const app = getApp();
+// 用于currentArticleList测试
+// {
+//   id: 1,
+//   title: "有没有人来领养拉布拉多呀！很可爱噢~",
+//   photo: "https://puppyhome-1317060763.cos.ap-guangzhou.myqcloud.com/dogs/labuladuo.png",
+//   publishTime: "2023-3-8 20:04:30"
+// }
 Page({
   data: {
     background: [{

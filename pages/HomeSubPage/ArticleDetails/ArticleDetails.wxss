@@ -1,1 +1,52 @@
-/* pages/HomeSubPage/ArticleDetails/ArticleDetails.wxss */
+.articleDetails {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  /* background-color: #F5DEB3 !important; */
+}
+
+.pageTitle {
+  width: 95%;
+  margin: 20rpx auto;
+  text-align: center;
+  border-bottom: 1rpx black dashed;
+}
+
+.articleMsg{
+  width: 95%;
+  margin: 10rpx auto;
+  padding: 15rpx;
+}
+
+.dogMsg{
+  width: 95%;
+  margin: 10rpx auto;
+}
+
+.dogShow{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.basicInfo{
+  width: 400rpx;
+  height: 200rpx;
+}
+
+.dogPhoto{
+  width: 290rpx;
+  height: 290rpx;
+  border-radius: 15rpx;
+}
+
+.userChoice{
+  position: absolute;
+  bottom: 250rpx;
+  width: 100%;
+}
+
+.choiceBtns{
+  display: flex;
+  justify-content: space-around;
+}
+

@@ -1,1 +1,34 @@
-<text>公告详情页</text>
+<view class="articleDetails">
+  <view class="pageTitle">
+    <rich-text nodes="{{pageTitle}}"></rich-text>
+  </view>
+  <view class="articleMsg">
+    <view><text style="color: #708090;font-size: larger;">发布时间：</text><text>{{articleDetails.publishTime}}</text></view>
+    <view class="desc">
+      <text style="color: #708090;font-size: larger;">具体描述：\n</text>
+      <text>{{articleDetails.description}}</text>
+    </view>
+  </view>
+  <view class="dogMsg">
+    <view><text style="color: #708090;font-size: larger;">修勾信息</text></view>
+    <view class="dogShow">
+      <view class="basicInfo">
+        <text style="color: #708090;font-size: large;">昵称：</text><text>{{dogsDetails.dogName}}\n</text>
+        <text style="color: #708090;font-size: large;">性别：</text><text>{{dogGender}}\n</text>
+        <text style="color: #708090;font-size: large;">年龄：</text><text>{{dogAge}}\n</text>
+        <text style="color: #708090;font-size: large;">品种：</text><text>{{dogsDetails.type}}\n</text>
+        <text style="color: #708090;font-size: large;">照片：</text><text>点击右图放大预览</text>
+      </view>
+      <view class="dogPhotoContainer">
+        <image class="dogPhoto" src="{{dogsDetails.photo}}" bindtap="getImageDetail"></image>
+      </view>
+    </view>
+  </view>
+  <view class="userChoice">
+    <view class="choiceBtns">
+      <button type="warn" size="mini">删除</button>
+      <button type="primary" size="mini">收藏</button>
+      <button type="primary" size="mini">领养</button>
+    </view>
+  </view>
+</view>

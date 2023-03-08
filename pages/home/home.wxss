@@ -102,6 +102,7 @@ swiper-item {
   height: 200rpx;
   padding: 20rpx;
   vertical-align: middle;
+  border-radius: 15rpx;
 }
 
 .noArticle{

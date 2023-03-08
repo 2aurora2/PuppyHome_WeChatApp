@@ -48,7 +48,8 @@ Page({
           var obj = {};
           obj['id'] = articles[i].id;
           obj['title'] = articles[i].title;
-          obj['publishTime'] = util.js_date_time(articles[i].publishTime); // 时间戳转换
+          var tmpTime = articles[i].publishTime;
+          obj['publishTime'] = util.js_date_time(tmpTime.substr(0,tmpTime.length-3)); // 时间戳转换
           obj['photo'] = dogs[i].photo;
           finalList.push(obj);
         }

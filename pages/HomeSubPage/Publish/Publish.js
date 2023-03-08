@@ -56,20 +56,20 @@ Page({
       uplaodFile: this.uplaodFile.bind(this)
     })
     // 获取狗的品种信息
-    // var that = this;
-    // wx.request({
-    //   url: 'http://localhost:3000/dogs/type',
-    //   method: 'GET',
-    //   header: {
-    //     'content-type': 'application/x-www-form-urlencoded'
-    //   },
-    //   data: {},
-    //   success(res) {
-    //     that.setData({
-    //       dogType: res.data.data.typeList
-    //     })
-    //   }
-    // })
+    var that = this;
+    wx.request({
+      url: 'http://localhost:3000/dogs/type',
+      method: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {},
+      success(res) {
+        that.setData({
+          dogType: res.data.data.typeList
+        })
+      }
+    })
   },
   dogAgeChoose(e) {
     this.setData({

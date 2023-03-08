@@ -7,7 +7,7 @@
   </view>
   <view class="pageSub">
     <rich-text nodes="{{pageSubTitle1}}"></rich-text>
-    <input class="publishTitle" type="text" placeholder="请输入公告标题" bindinput="getTitle" />
+    <input class="publishTitle" type="text" placeholder="请输入公告标题(不多于20个字)" bindinput="getTitle" maxlength="20"/>
   </view>
   <view class="pageSub">
     <rich-text nodes="{{pageSubTitle2}}"></rich-text>

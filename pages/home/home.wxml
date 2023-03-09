@@ -33,7 +33,7 @@
     </view>
     <view class="articleList">
       <view class="articleItem" wx:for="{{currentArticleList}}" wx:key="id" bindtap="getArticleDetails" data-id="{{item.id}}">
-        <image class="itemImage" src="{{item.photo}}"></image>
+        <image class="itemImage" src="{{item.photo}}" style="border-radius: 20rpx;"></image>
         <view class="articleMsg">
           <text class="articleTitle">{{item.title}}\n</text>
           <text class="articleTime">{{item.publishTime}}</text>

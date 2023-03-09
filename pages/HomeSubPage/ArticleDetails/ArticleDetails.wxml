@@ -2,13 +2,6 @@
   <view class="pageTitle">
     <rich-text nodes="{{pageTitle}}"></rich-text>
   </view>
-  <view class="articleMsg">
-    <view><text style="color: #708090;font-size: larger;">发布时间：</text><text>{{articleDetails.publishTime}}</text></view>
-    <view class="desc">
-      <text style="color: #708090;font-size: larger;">具体描述：\n</text>
-      <text>{{articleDetails.description}}</text>
-    </view>
-  </view>
   <view class="dogMsg">
     <view><text style="color: #708090;font-size: larger;">修勾信息</text></view>
     <view class="dogShow">
@@ -24,10 +17,17 @@
       </view>
     </view>
   </view>
+  <view class="articleMsg">
+    <view><text style="color: #708090;font-size: larger;">发布时间：</text><text>{{articleDetails.publishTime}}</text></view>
+    <view class="desc">
+      <text style="color: #708090;font-size: larger;">具体描述：\n</text>
+      <text>{{articleDetails.description}}</text>
+    </view>
+  </view>
   <view class="userChoice">
     <view class="choiceBtns">
-      <button type="warn" size="mini">删除</button>
-      <button type="primary" size="mini">收藏</button>
+      <button type="warn" size="mini" wx:if="{{isShowDelete}}">删除</button>
+      <button type="primary" size="mini" bindtap="collectHandle">收藏</button>
       <button type="primary" size="mini">领养</button>
     </view>
   </view>

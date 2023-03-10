@@ -1,59 +1,65 @@
 .articleDetails {
-  position: fixed;
   width: 100%;
   height: 100%;
-  /* background-color: #F5DEB3 !important; */
 }
 
-.pageTitle {
-  width: 95%;
-  margin: 20rpx auto;
-  text-align: center;
-  border-bottom: 1rpx black dashed;
+.DogImg{
+  width: 100%;
 }
 
-.articleMsg{
-  width: 92%;
-  margin: 20rpx auto;
-  padding: 15rpx;
-  border: 2px gainsboro solid;
-  border-radius: 20rpx;
-  box-shadow: 5rpx -5rpx 10rpx #D6D6D6;
+.DogMsg{
+  width: 100%;
+  position: absolute;
+  top: 45%;
+  padding: 20rpx;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+  background: #F6F6F6 !important;
+  border-top: 1rpx black solid;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
 
-.dogMsg{
-  width: 92%;
-  margin: 10rpx auto;
-  padding: 15rpx;
-  border: 2px gainsboro solid;
-  border-radius: 20rpx;
-  box-shadow: 5rpx -5rpx 10rpx #D6D6D6;
+.msgName{
+  font-size: larger;
 }
 
-.dogShow{
-  display: flex;
-  justify-content: flex-start;
+.msgValue{
+  color: #708090;
 }
 
-.basicInfo{
-  width: 400rpx;
-  height: 300rpx;
-}
-
-.dogPhoto{
-  width: 260rpx;
-  height: 260rpx;
-  border-radius: 30rpx;
+.tipsText{
+  background-color: #f1d4d8 !important;
+  border-left: 5rpx #DC143C solid;
+  padding: 10rpx;
+  border-radius: 10rpx;
 }
 
 .userChoice{
-  position: absolute;
-  bottom: 250rpx;
   width: 100%;
+  position: fixed;
+  bottom: 0;
+  border-top: 1rpx black solid;
+  background: white !important;
 }
 
-.choiceBtns{
+.userBtns{
   display: flex;
   justify-content: space-around;
+}
+
+.btnMsg{
+  margin-left: 10rpx;
+}
+
+.btnContainer{
+  padding: 25rpx;
+}
+
+.Btn{
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
 }
 

@@ -1,34 +1,36 @@
 <view class="articleDetails">
-  <view class="pageTitle">
-    <rich-text nodes="{{pageTitle}}"></rich-text>
-  </view>
-  <view class="dogMsg">
-    <view><text style="color: #708090;font-size: larger;">修勾信息</text></view>
-    <view class="dogShow">
-      <view class="basicInfo">
-        <text style="color: #708090;font-size: large;">昵称：</text><text>{{dogsDetails.dogName}}\n</text>
-        <text style="color: #708090;font-size: large;">性别：</text><text>{{dogGender}}\n</text>
-        <text style="color: #708090;font-size: large;">年龄：</text><text>{{dogAge}}\n</text>
-        <text style="color: #708090;font-size: large;">品种：</text><text>{{dogsDetails.type}}\n</text>
-        <text style="color: #708090;font-size: large;">照片：</text><text>点击右图放大预览</text>
-      </view>
-      <view class="dogPhotoContainer">
-        <image class="dogPhoto" src="{{dogsDetails.photo}}" bindtap="getImageDetail"></image>
-      </view>
+  <view class="DogShow">
+    <view>
+      <image class="DogImg" src="{{dogsDetails.photo}}" bindtap="getImageDetail" mode="widthFix"></image>
     </view>
-  </view>
-  <view class="articleMsg">
-    <view><text style="color: #708090;font-size: larger;">发布时间：</text><text>{{articleDetails.publishTime}}</text></view>
-    <view class="desc">
-      <text style="color: #708090;font-size: larger;">具体描述：\n</text>
-      <text>{{articleDetails.description}}</text>
+    <view class="DogMsg">
+      <text class="msgName">昵称：</text><text class="msgValue">{{dogsDetails.dogName}}\n</text>
+      <text class="msgName">性别：</text><text class="msgValue">{{dogGender}}\n</text>
+      <text class="msgName">年龄：</text><text class="msgValue">{{dogAge}}\n</text>
+      <text class="msgName">品种：</text><text class="msgValue">{{dogsDetails.type}}\n</text>
+      <text class="msgName">送养人描述：\n</text>
+      <image src="/image/Home/icons/quotleft.png" style="width: 35rpx; height: 30rpx;"></image>
+      <text class="msgValue">\n{{articleDetails.description}}\n</text>
+      <image src="/image/Home/icons/quotright.png" style="width: 45rpx; height: 45rpx; float: right;"></image>
+      <text style="color: #A9A9A9;">\n{{articleDetails.publishTime}}\n\n</text>
+      <view class="tipsText"><text>Tips：{{tips}}</text></view>
+      <text>\n\n\n\n</text>
     </view>
   </view>
   <view class="userChoice">
-    <view class="choiceBtns">
-      <button type="warn" size="mini" wx:if="{{isShowDelete}}">删除</button>
-      <button type="primary" size="mini" bindtap="collectHandle">收藏</button>
-      <button type="primary" size="mini">领养</button>
+    <view class="userBtns">
+      <view class="btnContainer" wx:if="{{isShowDelete}}">
+        <image class="Btn" src="/image/Home/icons/delete.png"></image>
+        <text class="btnMsg">删除</text>
+      </view>
+      <view class="btnContainer" bindtap="collectHandle">
+        <image class="Btn" src="{{collectUrl}}"></image>
+        <text class="btnMsg">{{collectTxt}}</text>
+      </view>
+      <view class="btnContainer">
+        <image class="Btn" src="/image/Home/icons/willing.png"></image>
+        <text class="btnMsg">领养</text>
+      </view>
     </view>
   </view>
 </view>

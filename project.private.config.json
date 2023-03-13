@@ -5,5 +5,6 @@
     "compileHotReLoad": false,
     "urlCheck": false
   },
-  "condition": {}
+  "condition": {},
+  "libVersion": "2.30.2"
 }

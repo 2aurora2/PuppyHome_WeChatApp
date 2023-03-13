@@ -1,14 +1,30 @@
-<view class="myMessage">
-  <view class="myPost">
-    <view class="partitionTitle">
-      <image src="/image/Home/icons/title_icon.png"></image>
-      <text>送养人消息</text>
-    </view>
-  </view>
+<view class="myMessage" wx:if="{{!isShowAgreeDiglog}}">
   <view class="myGet">
     <view class="partitionTitle">
       <image src="/image/Home/icons/title_icon.png"></image>
-      <text>领养人消息</text>
+      <text>消息列表<text style="color: #808080; font-size: medium;">（点击用户头像进行消息处理）</text></text>
+    </view>
+    <view class="adopterList">
+      <view class="adopterItem" wx:for="{{adopters}}" wx:key="id" data-idx="id"> 
+        <view class="img" bindtap="isOrNotAgreeAdopt" data-idx="{{item.id}}">
+          <image src="{{item.avatar}}"></image>
+        </view>
+        <view class="textBox">
+          <view class="textContent">
+            <view class="h1">
+              <text>{{item.realName}} </text>
+              <text style="color: #808080; font-size: medium;" user-select="true">{{item.telephone}}</text>
+            </view>
+          </view>
+          <view class="p">哈喽！我对您发布的名为“{{item.articleTitle}}”的领养公告有极大的兴趣！欢迎致电联系~</view>
+        </view>
+      </view>
+    </view>
+    <view class="noArticle" wx:if="{{numOfAdopter === 0?true:false}}">
+      <text>Tips：暂无其他用户回应你的领养公告，敬请期待……</text>
     </view>
   </view>
 </view>
+
+<!--是否同意领养人领养弹窗-->
+<mp-dialog buttons="{{agreeBtns}}" mask="true" mask-closable="{{false}}" show="{{isShowAgreeDiglog}}" title="{{agreeTxt}}" bindbuttontap="agreeAdoptHandle"></mp-dialog>

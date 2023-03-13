@@ -10,3 +10,65 @@
   vertical-align: middle;
   font-weight: bolder;
 }
+
+.adopterList {
+  margin-top: 30rpx;
+}
+
+.adopterItem {
+  width: 95%;
+  height: 250rpx;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  backdrop-filter: blur(10rpx);
+  transition: 0.5s ease-in-out;
+  margin: 10rpx auto;
+  border-radius: 30px;
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow: 20px 20px 60px #d9d9d9,
+    -20px -20px 5px #ffffff;
+}
+
+.img image {
+  width: 120rpx;
+  height: 120rpx;
+  margin-left: 10rpx;
+  border-radius: 130rpx;
+}
+
+.textBox {
+  width: calc(100% - 90px);
+  margin-left: 10rpx;
+  color: black;
+  font-family: 'Poppins'sans-serif;
+}
+
+.textContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.span {
+  font-size: 10rpx;
+}
+
+.h1 {
+  font-size: large;
+  font-weight: bold;
+}
+
+.p {
+  font-size: small;
+  font-weight: lighter;
+}
+
+.noArticle {
+  margin: 10rpx auto;
+  width: 95%;
+  background-color: #f1d4d8 !important;
+  border-left: 5rpx #DC143C solid;
+  padding: 10rpx;
+  border-radius: 10rpx;
+}

@@ -37,7 +37,9 @@ Page({
     deleteDialogText: "是否确认删除此领养公告？",
     adoptDialogText: "是否向送养人发送领养意愿？",
     error: "请勿重复提交领养申请！",
-    isShowError: false
+    isShowError: false,
+    success: "成功发送领养申请！",
+    isShowSuccess: false
   },
   onLoad(options) {
     this.setData({
@@ -198,14 +200,15 @@ Page({
         },
         success(res) {
           console.log(res)
-          wx.navigateBack({
-            delta: 1
-          });
           if(res.data.code != 200){
             that.setData({
               error: res.data.msg,
               isShowError: true
             })
+          }else{
+            wx.navigateBack({
+              delta: 1
+            });
           }
         },
         fail(res) {
@@ -217,6 +220,11 @@ Page({
   repeatAdoptDialog(){
     this.setData({
       isShowError: false
+    })
+  },
+  successAdoptDialog(){
+    this.setData({
+      isShowSuccess: false
     })
   }
 })

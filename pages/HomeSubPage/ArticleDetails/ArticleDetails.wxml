@@ -1,4 +1,4 @@
-<view class="articleDetails" wx:if="{{!isConfirmDelete&&!isConfirmAdopt&&!isShowError}}">
+<view class="articleDetails" wx:if="{{!isConfirmDelete&&!isConfirmAdopt&&!isShowError&&!isShowSuccess}}">
   <view class="DogShow">
     <view>
       <image class="DogImg" src="{{dogsDetails.photo}}" bindtap="getImageDetail" mode="widthFix"></image>
@@ -43,3 +43,6 @@
 
 <!-- 请勿重复收养提示 -->
 <mp-dialog buttons="{{adoptBtns}}" mask="true" mask-closable="{{false}}" show="{{isShowError}}" title="{{error}}" bindbuttontap="repeatAdoptDialog"></mp-dialog>
+
+<!-- 成功发送收养申请提示 -->
+<mp-dialog buttons="{{adoptBtns}}" mask="true" mask-closable="{{false}}" show="{{isShowSuccess}}" title="{{success}}" bindbuttontap="successAdoptDialog"></mp-dialog>

@@ -83,5 +83,10 @@ Page({
         currentNum: currentN + this.data.perShow
       })
     }
+  },
+  getArticleDetails(e){
+    wx.navigateTo({
+      url: '/pages/HomeSubPage/ArticleDetails/ArticleDetails?id=' + e.currentTarget.dataset.id,
+    })
   }
 })

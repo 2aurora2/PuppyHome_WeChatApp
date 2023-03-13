@@ -1,4 +1,5 @@
 const app = getApp()
+var util = require("../../../utils/util.js")
 // 前后端测试无误后把测试数据都删除
 Page({
   data: {
@@ -31,7 +32,7 @@ Page({
     }, {
       text: "确认"
     }],
-    adoptBtns:[{
+    adoptBtns: [{
       text: "确认"
     }],
     deleteDialogText: "是否确认删除此领养公告？",
@@ -59,6 +60,7 @@ Page({
         'content-type': 'application/x-www-form-urlencoded'
       },
       data: {
+        token: wx.getStorageSync('token'),
         articleId: that.data.articleId
       },
       success(res) {
@@ -68,7 +70,13 @@ Page({
           dogAge: that.data.ageList[res.data.data.dog.age],
           dogGender: that.data.genderList[res.data.data.dog.gender],
           isCollect: res.data.data.isCollect
-        })
+        });
+        var tmpArticleDetails = that.data.articleDetails;
+        tmpArticleDetails.publishTime = util.js_date_time(tmpArticleDetails.publishTime / 1000);
+        console.log(tmpArticleDetails);
+        that.setData({
+          articleDetails: tmpArticleDetails
+        });
         // 收藏与否展示
         if (that.data.isCollect === true) {
           that.setData({
@@ -199,13 +207,16 @@ Page({
           articleId: that.data.articleId
         },
         success(res) {
+          that.setData({
+            isConfirmAdopt: false
+          });
           console.log(res)
-          if(res.data.code != 200){
+          if (res.data.code != 200) {
             that.setData({
               error: res.data.msg,
               isShowError: true
             })
-          }else{
+          } else {
             wx.navigateBack({
               delta: 1
             });
@@ -217,12 +228,12 @@ Page({
       })
     }
   },
-  repeatAdoptDialog(){
+  repeatAdoptDialog() {
     this.setData({
       isShowError: false
     })
   },
-  successAdoptDialog(){
+  successAdoptDialog() {
     this.setData({
       isShowSuccess: false
     })

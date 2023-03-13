@@ -24,7 +24,10 @@ App({
             },
             success(res) {
               wx.setStorageSync('token', res.data.data.token); //将返回的token存入本地缓存
-              if (res.data.data.hasObj === true) {
+              console.log(res.data.data.token);
+              console.log(res.data.data.hasObj)
+              console.log(res.data.data.hasObj === "true");
+              if (res.data.data.hasObj === "true") {
                 that.globalData.hasEvenLogin = true;
                 //调用接口获取用户信息
                 wx.request({
@@ -39,6 +42,9 @@ App({
                   success(res) {
                     that.globalData.userInfo = res.data.data.user; //存储用户信息
                     console.log(res.data.data.user);
+                  },
+                  fail(res) {
+                    console.log(res);
                   }
                 })
               } else {

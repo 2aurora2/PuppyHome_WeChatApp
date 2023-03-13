@@ -61,13 +61,13 @@ Page({
       var that = this;
       wx.request({
         url: 'http://localhost:3000/adopt/ignore',
-        method: 'GET',
+        method: 'POST',
         header: {
           'content-type': 'application/x-www-form-urlencoded'
         },
         data: {
           token: wx.getStorageSync('token'),
-          adoptId: currentAdopter
+          adoptId: that.data.currentAdopter
         },
         success(res) {
           that.setData({
@@ -84,13 +84,13 @@ Page({
       var that = this;
       wx.request({
         url: 'http://localhost:3000/adopt/accept',
-        method: 'GET',
+        method: 'POST',
         header: {
           'content-type': 'application/x-www-form-urlencoded'
         },
         data: {
           token: wx.getStorageSync('token'),
-          adoptId: currentAdopter
+          adoptId: that.data.currentAdopter
         },
         success(res) {
           that.setData({

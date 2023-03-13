@@ -11,6 +11,7 @@
     "pages/HomeSubPage/ArticleDetails/ArticleDetails",
     "pages/MyInfoSubPages/setUserInfo/setUserInfo",
     "pages/MyInfoSubPages/mySelect/mySelect",
+    "pages/MyInfoSubPages/myMessage/myMessage",
     "pages/MyInfoSubPages/myPublish/myPublish",
     "pages/MyInfoSubPages/applyForAdmin/applyForAdmin",
     "pages/MyInfoSubPages/adminAudit/adminAudit",

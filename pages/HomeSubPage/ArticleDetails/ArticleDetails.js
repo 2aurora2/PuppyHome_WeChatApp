@@ -22,8 +22,22 @@ Page({
     ageList: ['年龄不详', '1岁以下', '1岁', '2岁', '3岁', '4岁', '5岁', '6岁', '7岁', '8岁', '9岁', '10岁', '10岁以上'],
     isShowDelete: true,
     isCollect: false,
+    isConfirmDelete: false,
+    isConfirmAdopt: false,
     collectUrl: "/image/Home/icons/noCollect.png",
-    collectTxt: "收藏"
+    collectTxt: "收藏",
+    btns: [{
+      text: "取消"
+    }, {
+      text: "确认"
+    }],
+    adoptBtns:[{
+      text: "确认"
+    }],
+    deleteDialogText: "是否确认删除此领养公告？",
+    adoptDialogText: "是否向送养人发送领养意愿？",
+    error: "请勿重复提交领养申请！",
+    isShowError: false
   },
   onLoad(options) {
     this.setData({
@@ -125,5 +139,84 @@ Page({
         }
       })
     }
+  },
+  deleteHandle() {
+    this.setData({
+      isConfirmDelete: true
+    })
+  },
+  adoptHandle() {
+    this.setData({
+      isConfirmAdopt: true
+    })
+  },
+  isOrnotDelete(e) {
+    if (e.detail.index === 0) {
+      this.setData({
+        isConfirmDelete: false
+      })
+    } else {
+      var that = this;
+      wx.request({
+        url: 'http://localhost:3000/article/delete',
+        method: 'POST',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        data: {
+          token: wx.getStorageSync('token'),
+          articleId: that.data.articleId
+        },
+        success(res) {
+          console.log(res)
+          wx.navigateBack({
+            delta: 1
+          });
+        },
+        fail(res) {
+          console.log(res)
+        }
+      })
+    }
+  },
+  isOrnotAdopt(e) {
+    if (e.detail.index === 0) {
+      this.setData({
+        isConfirmAdopt: false
+      })
+    } else {
+      var that = this;
+      wx.request({
+        url: 'http://localhost:3000/adopt/send',
+        method: 'POST',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        data: {
+          token: wx.getStorageSync('token'),
+          articleId: that.data.articleId
+        },
+        success(res) {
+          console.log(res)
+          wx.navigateBack({
+            delta: 1
+          });
+          if(res.data.code != 200){
+            that.setData({
+              error: res.data.msg,
+              isShowError: true
+            })
+          }
+        },
+        fail(res) {
+          console.log(res)
+        }
+      })
+    }
+  },
+  repeatAdoptDialog(){
+    this.setData({
+      isShowError: false
+    })
   }
 })

@@ -1,1 +1,14 @@
-/* pages/HomeSubPage/Search/Search.wxss */
+.searchBox{
+  border: 8rpx #2F4F4F solid;
+  border-radius: 80rpx;
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10rpx;
+}
+
+.searchImg{
+  width: 50rpx;
+  height: 50rpx;
+  float: right;
+}

@@ -1,1 +1,8 @@
-<text>搜索页面</text>
+<view class="searchBox">
+  <view>
+    <input type="text" placeholder="输入查询的修勾品种……" />
+  </view>
+  <view>
+    <image class="searchImg" src="/image/Home/icons/searchBox.png" ></image>
+  </view>
+</view>

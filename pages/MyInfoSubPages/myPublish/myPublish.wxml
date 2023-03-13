@@ -1,1 +1,6 @@
-<text>我的发布</text>
+<view class="myPublish">
+  <view class="partitionTitle">
+    <image src="/image/Home/icons/title_icon.png"></image>
+    <text>我的发布</text>
+  </view>
+</view>

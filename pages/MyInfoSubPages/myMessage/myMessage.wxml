@@ -1,0 +1,14 @@
+<view class="myMessage">
+  <view class="myPost">
+    <view class="partitionTitle">
+      <image src="/image/Home/icons/title_icon.png"></image>
+      <text>送养人消息</text>
+    </view>
+  </view>
+  <view class="myGet">
+    <view class="partitionTitle">
+      <image src="/image/Home/icons/title_icon.png"></image>
+      <text>领养人消息</text>
+    </view>
+  </view>
+</view>

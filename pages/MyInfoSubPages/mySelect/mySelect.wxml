@@ -1,1 +1,6 @@
-<text>我的收藏</text>
+<view class="mySelect">
+  <view class="partitionTitle">
+    <image src="/image/Home/icons/title_icon.png"></image>
+    <text>我的收藏</text>
+  </view>
+</view>

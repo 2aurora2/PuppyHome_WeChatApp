@@ -1,4 +1,4 @@
-<view class="articleDetails">
+<view class="articleDetails" wx:if="{{!isConfirmDelete&&!isConfirmAdopt&&!isShowError}}">
   <view class="DogShow">
     <view>
       <image class="DogImg" src="{{dogsDetails.photo}}" bindtap="getImageDetail" mode="widthFix"></image>
@@ -19,7 +19,7 @@
   </view>
   <view class="userChoice">
     <view class="userBtns">
-      <view class="btnContainer" wx:if="{{isShowDelete}}">
+      <view class="btnContainer" wx:if="{{isShowDelete}}" bindtap="deleteHandle">
         <image class="Btn" src="/image/Home/icons/delete.png"></image>
         <text class="btnMsg">删除</text>
       </view>
@@ -27,10 +27,19 @@
         <image class="Btn" src="{{collectUrl}}"></image>
         <text class="btnMsg">{{collectTxt}}</text>
       </view>
-      <view class="btnContainer">
+      <view class="btnContainer" bindtap="adoptHandle">
         <image class="Btn" src="/image/Home/icons/willing.png"></image>
         <text class="btnMsg">领养</text>
       </view>
     </view>
   </view>
 </view>
+
+<!-- 是否删除弹窗 -->
+<mp-dialog buttons="{{btns}}" mask="true" mask-closable="{{false}}" show="{{isConfirmDelete}}" title="{{deleteDialogText}}" bindbuttontap="isOrnotDelete"></mp-dialog>
+
+<!-- 是否领养弹窗 -->
+<mp-dialog buttons="{{btns}}" mask="true" mask-closable="{{false}}" show="{{isConfirmAdopt}}" title="{{adoptDialogText}}" bindbuttontap="isOrnotAdopt"></mp-dialog>
+
+<!-- 请勿重复收养提示 -->
+<mp-dialog buttons="{{adoptBtns}}" mask="true" mask-closable="{{false}}" show="{{isShowError}}" title="{{error}}" bindbuttontap="repeatAdoptDialog"></mp-dialog>

@@ -1,1 +1,12 @@
-/* pages/MyInfoSubPages/mySelect/mySelect.wxss */
+.partitionTitle image {
+  width: 30rpx;
+  height: 50rpx;
+  vertical-align: middle;
+}
+
+.partitionTitle text {
+  padding: 5rpx;
+  font-size: larger;
+  vertical-align: middle;
+  font-weight: bolder;
+}

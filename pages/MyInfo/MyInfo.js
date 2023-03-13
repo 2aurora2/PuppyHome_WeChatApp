@@ -55,9 +55,9 @@ Page({
       }
     })
   },
-  ToMyPublish(){
+  ToMyMessage(){
     wx.navigateTo({
-      url: "/pages/MyInfoSubPages/myPublish/myPublish",
+      url: "/pages/MyInfoSubPages/myMessage/myMessage",
       success(res) {
         console.log(res);
       },
@@ -102,6 +102,17 @@ Page({
   ToAboutUs(){
     wx.navigateTo({
       url: "/pages/MyInfoSubPages/aboutUs/aboutUs",
+      success(res) {
+        console.log(res);
+      },
+      fail(res) {
+        console.log(res)
+      }
+    })
+  },
+  ToMyPublish(){
+    wx.navigateTo({
+      url: "/pages/MyInfoSubPages/myPublish/myPublish",
       success(res) {
         console.log(res);
       },

@@ -12,3 +12,67 @@
   height: 50rpx;
   float: right;
 }
+
+.articleList {
+  margin: 10rpx auto;
+  width: 98%;
+}
+
+.articleItem {
+  border: 2px gainsboro solid;
+  border-radius: 20rpx;
+  box-shadow: 5rpx -5rpx 10rpx #D6D6D6;
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.articleMsg {
+  width: 450rpx;
+  height: 200rpx;
+  margin-top: 20rpx;
+}
+
+.articleTitle {
+  font-size: large;
+  font-weight: bolder;
+  padding: 5rpx;
+}
+
+.articleTime {
+  color: #A9A9A9;
+}
+
+.articleItem image {
+  width: 200rpx;
+  height: 200rpx;
+  padding: 20rpx;
+  vertical-align: middle;
+  border-radius: 15rpx;
+}
+
+.noArticle{
+  margin: 10rpx auto;
+  width: 95%;
+  background-color: #f1d4d8 !important;
+  border-left: 5rpx #DC143C solid;
+  padding: 10rpx;
+  border-radius: 10rpx;
+}
+
+.partitionTitle image {
+  width: 30rpx;
+  height: 50rpx;
+  vertical-align: middle;
+}
+
+.partitionTitle text {
+  padding: 5rpx;
+  font-size: larger;
+  vertical-align: middle;
+  font-weight: bolder;
+}
+
+.searchRes{
+  margin-top: 20rpx auto;
+}

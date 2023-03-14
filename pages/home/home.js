@@ -1,7 +1,5 @@
 var util = require("../../utils/util.js");
 const app = getApp();
-// 用于currentArticleList测试
-
 Page({
   data: {
     background: [{
@@ -23,12 +21,7 @@ Page({
     dialogText: "首次登录请前往完善个人信息",
     isshow: null,
     articleList: [],
-    currentArticleList: [{
-      id: 1,
-      title: "有没有人来领养拉布拉多呀！很可爱噢~",
-      photo: "https://puppyhome-1317060763.cos.ap-guangzhou.myqcloud.com/swiper/img04.jpg",
-      publishTime: "2023-3-8 20:04:30"
-    }],
+    currentArticleList: [],
     currentNum: 0,
     perShow: 3
   },
@@ -37,7 +30,7 @@ Page({
       isshow: app.globalData.hasEvenLogin
     });
     var that = this;
-    // 请求文章列表数据
+    // 请求领养公告列表数据
     wx.request({
       url: 'http://localhost:3000/article/except',
       method: 'GET',
@@ -48,6 +41,7 @@ Page({
         token: wx.getStorageSync('token')
       },
       success(res) {
+        // 对返回的两个列表的所需数据进行合并处理
         var articles = res.data.data.articles;
         var dogs = res.data.data.dogs;
         var finalList = [];
@@ -104,6 +98,7 @@ Page({
       })
     }
   },
+  // 首次登录前往设置个人信息
   ToSetUserInfo() {
     this.setData({
       isshow: true
@@ -118,21 +113,25 @@ Page({
       }
     })
   },
+  // 发布页面跳转
   ToPublish() {
     wx.navigateTo({
       url: "/pages/HomeSubPage/Publish/Publish"
     })
   },
+  // 搜索页面跳转
   ToSearch() {
     wx.navigateTo({
       url: "/pages/HomeSubPage/Search/Search"
     })
   },
+  // “拍照识修勾”页面跳转
   ToIdentify() {
     wx.navigateTo({
       url: "/pages/HomeSubPage/Identify/Identify"
     })
   },
+  // 文章详情页跳转
   getArticleDetails(e) {
     wx.navigateTo({
       url: '/pages/HomeSubPage/ArticleDetails/ArticleDetails?id=' + e.currentTarget.dataset.id + "&isOwner=false"

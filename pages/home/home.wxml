@@ -46,5 +46,5 @@
   </view>
 </view>
 
-<!-- 弹窗 -->
+<!-- 首次登陆弹窗 -->
 <mp-dialog buttons="{{btns}}" mask="true" mask-closable="{{false}}" show="{{!isshow}}" title="{{dialogText}}" bindbuttontap="ToSetUserInfo"></mp-dialog>

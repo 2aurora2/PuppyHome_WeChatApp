@@ -21,7 +21,7 @@
       </view>
     </view>
     <view class="noArticle" wx:if="{{numOfAdopter === 0?true:false}}">
-      <text>Tips：暂无其他用户回应你的领养公告，敬请期待……</text>
+      <text>Tips：暂无其他用户回应你的领养公告……</text>
     </view>
   </view>
 </view>

@@ -5,20 +5,10 @@ Page({
   data: {
     tips: "确认领养后，送养人会在“我的消息”中得到领养人的相关信息（姓名、电话），请送养人在联系到满意的领养人后在“我的消息”中进行“同意”或“拒绝”选择,便于后台进行数据的处理",
     articleId: null,
-    articleDetails: {
-      title: "有没有人来领养拉布拉多呀！真的很可爱噢~",
-      publishTime: "2023-3-8 20:04:30",
-      description: "这只狗陪伴我很多年了，我很舍不得，但是因为我个人的原因不得不将其托付给其他人抚养，我希望找到一个温柔、负责的人来成为它的新主人，如果你有意愿的话请通过此平台的领养功能，我会在收到消息后和你联系，说明详细情况，以下是拉布拉多的详细信息，各位可以先看看"
-    },
-    dogsDetails: {
-      dogName: "哈尼",
-      photo: "https://puppyhome-1317060763.cos.ap-guangzhou.myqcloud.com/swiper/img04.jpg",
-      gender: 1,
-      age: 4,
-      type: "拉布拉多"
-    },
-    dogAge: "年龄不详",
-    dogGender: "雄性",
+    articleDetails: {},
+    dogsDetails: {},
+    dogAge: "",
+    dogGender: "",
     genderList: ['雌性', '雄性'],
     ageList: ['年龄不详', '1岁以下', '1岁', '2岁', '3岁', '4岁', '5岁', '6岁', '7岁', '8岁', '9岁', '10岁', '10岁以上'],
     isShowDelete: false,
@@ -80,7 +70,7 @@ Page({
         that.setData({
           articleDetails: tmpArticleDetails
         });
-        // 收藏与否展示
+        // 是否收藏显示
         if (that.data.isCollect === true) {
           that.setData({
             collectUrl: "/image/Home/icons/evenCollect.png",

@@ -15,14 +15,20 @@
 
 .pageSub .publishTitle {
   border: 1px gainsboro solid;
-  padding: 10rpx;
-  border-radius: 10rpx;
+  padding: 20rpx;
+  border-radius: 30rpx;
+  background: #f2f2f2;
+  box-shadow: 20rpx 20rpx 40rpx #aeaeae,
+    -20rpx -20rpx 40rpx #ffffff;
 }
 
 .dogCard {
   border: 1px gainsboro solid;
-  padding: 10rpx;
-  border-radius: 10rpx;
+  padding: 20rpx;
+  border-radius: 30rpx;
+  background: #f2f2f2;
+  box-shadow: 20rpx 20rpx 40rpx #aeaeae,
+  -20rpx -20rpx 40rpx #ffffff;
 }
 
 .dogMsg .nickName {
@@ -38,7 +44,7 @@
   width: max-content;
 }
 
-.gender view{
+.gender view {
   float: right;
 }
 
@@ -56,12 +62,12 @@
   width: max-content;
 }
 
-.age label{
+.age label {
   float: left;
   margin-top: 5rpx;
 }
 
-.age view{
+.age view {
   float: right;
   border-bottom: 1px gainsboro solid;
 }
@@ -70,23 +76,75 @@
   width: max-content;
 }
 
-.type label{
+.type label {
   float: left;
   margin-top: 5rpx;
 }
 
-.type view{
+.type view {
   float: right;
   border-bottom: 1px gainsboro solid;
 }
 
-.articleDesc{
+.articleDesc {
   width: 100%;
   border: 1px gainsboro solid;
-  border-radius: 10rpx;
-  padding: 10rpx;
+  border-radius: 30rpx;
+  background: #f2f2f2;
+  box-shadow: 20rpx 20rpx 40rpx #aeaeae,
+  -20rpx -20rpx 40rpx #ffffff;
+  padding: 20rpx;
   /* 解决textarea的width设置100%超出父元素宽度 */
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+}
+
+.publishBtn {
+  margin-top: 50rpx;
+}
+
+.PublishContent {
+  padding: 20rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+.button {
+  padding: 1em 2em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #2caf88;
+  transition: all 1000ms;
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+  outline: 2px solid #2caf88;
+}
+
+button:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+  outline: 2px solid #4ea35d;
+  box-shadow: 4px 5px 17px -4px #20717e;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #2caf88;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 200ms;
+}
+
+button:hover::before {
+  width: 250%;
 }

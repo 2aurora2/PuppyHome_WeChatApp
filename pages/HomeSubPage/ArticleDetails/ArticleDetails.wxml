@@ -4,13 +4,17 @@
       <image class="DogImg" src="{{dogsDetails.photo}}" bindtap="getImageDetail" mode="widthFix"></image>
     </view>
     <view class="DogMsg">
-      <text class="msgName">昵称：</text><text class="msgValue">{{dogsDetails.dogName}}\n</text>
-      <text class="msgName">性别：</text><text class="msgValue">{{dogGender}}\n</text>
-      <text class="msgName">年龄：</text><text class="msgValue">{{dogAge}}\n</text>
-      <text class="msgName">品种：</text><text class="msgValue">{{dogsDetails.type}}\n</text>
+      <text class="msgName">昵称：</text>
+      <text class="msgValue" user-select="true">{{dogsDetails.dogName}}\n</text>
+      <text class="msgName">性别：</text>
+      <text class="msgValue" user-select="true">{{dogGender}}\n</text>
+      <text class="msgName">年龄：</text>
+      <text class="msgValue" user-select="true">{{dogAge}}\n</text>
+      <text class="msgName">品种：</text>
+      <text class="msgValue" user-select="true">{{dogsDetails.type}}\n</text>
       <text class="msgName">送养人描述：\n</text>
       <image src="/image/Home/icons/quotleft.png" style="width: 35rpx; height: 30rpx;"></image>
-      <text class="msgValue">\n{{articleDetails.description}}\n</text>
+      <text class="msgValue" user-select="true">\n{{articleDetails.description}}\n</text>
       <image src="/image/Home/icons/quotright.png" style="width: 45rpx; height: 45rpx; float: right;"></image>
       <text style="color: #A9A9A9;">\n{{articleDetails.publishTime}}\n\n</text>
       <view class="tipsText"><text>Tips：{{tips}}</text></view>

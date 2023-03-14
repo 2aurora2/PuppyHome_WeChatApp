@@ -1,13 +1,7 @@
 Page({
   data: {
-    adopters: [{
-      id: 0,
-      avatar: "https://puppyhome-1317060763.cos.ap-guangzhou.myqcloud.com/userinfo/test01.jpg",
-      realName: "疯狂的麦吉",
-      telephone: "12345678910",
-      articleTitle: "有没有人来领养拉布拉多呀！很可爱噢~"
-    }],
-    numOfAdopter: 1,
+    adopters: [],
+    numOfAdopter: 0,
     currentAdopter: null,
     agreeBtns: [{
       text: "考虑一下"

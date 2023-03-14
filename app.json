@@ -3,8 +3,6 @@
     "pages/enter/enter",
     "pages/home/home",
     "pages/MyInfo/MyInfo",
-    "pages/index/index",
-    "pages/logs/logs",
     "pages/HomeSubPage/Publish/Publish",
     "pages/HomeSubPage/Search/Search",
     "pages/HomeSubPage/Identify/Identify",

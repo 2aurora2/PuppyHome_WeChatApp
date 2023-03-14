@@ -5,57 +5,59 @@
   <view class="pageTitle">
     <rich-text nodes="{{pageTitle}}"></rich-text>
   </view>
-  <view class="pageSub">
-    <rich-text nodes="{{pageSubTitle1}}"></rich-text>
-    <input class="publishTitle" type="text" placeholder="请输入公告标题(不多于20个字)" bindinput="getTitle" maxlength="20"/>
-  </view>
-  <view class="pageSub">
-    <rich-text nodes="{{pageSubTitle2}}"></rich-text>
-    <view class="dogCard">
-      <view class="dogMsg">
-        <view class="nickName">
-          <label>昵称：</label>
-          <input type="text" placeholder="请输入修勾的昵称" bindinput="getDogNickname" />
-        </view>
-        <view class="gender">
-          <label>性别：</label>
-          <view>
-            <radio-group bindchange="getGender" class="radiogroup">
-              <view class="radiobox" wx:for="{{gender}}" wx:key="value">
-                <radio value="{{item.value}}" color="#ff0000" checked="{{item.checked}}" />
-                <view class="radiotxt">{{item.name}}</view>
-              </view>
-            </radio-group>
+  <view class="PublishContent">
+    <view class="pageSub">
+      <rich-text nodes="{{pageSubTitle1}}"></rich-text>
+      <input class="publishTitle" type="text" placeholder="请输入公告标题(不多于20个字)" bindinput="getTitle" maxlength="20" />
+    </view>
+    <view class="pageSub">
+      <rich-text nodes="{{pageSubTitle2}}"></rich-text>
+      <view class="dogCard">
+        <view class="dogMsg">
+          <view class="nickName">
+            <label>昵称：</label>
+            <input type="text" placeholder="请输入修勾的昵称" bindinput="getDogNickname" />
+          </view>
+          <view class="gender">
+            <label>性别：</label>
+            <view>
+              <radio-group bindchange="getGender" class="radiogroup">
+                <view class="radiobox" wx:for="{{gender}}" wx:key="value">
+                  <radio value="{{item.value}}" color="#ff0000" checked="{{item.checked}}" />
+                  <view class="radiotxt">{{item.name}}</view>
+                </view>
+              </radio-group>
+            </view>
+          </view>
+          <view class="age">
+            <label>年龄：</label>
+            <view>
+              <picker bindchange="dogAgeChoose" value="{{ageIdx}}" range="{{ageList}}">
+                <view class="picker">{{ageList[ageIdx]}}<text>(点击可选)</text></view>
+              </picker>
+            </view>
+          </view>
+          <view class="type">
+            <label>品种：</label>
+            <view>
+              <picker bindchange="dogTypeChoose" value="{{typeIdx}}" range="{{dogType}}">
+                <view class="picker">{{dogType[typeIdx]}}<text>(点击可选)</text></view>
+              </picker>
+            </view>
           </view>
         </view>
-        <view class="age">
-          <label>年龄：</label>
-          <view>
-            <picker bindchange="dogAgeChoose" value="{{ageIdx}}" range="{{ageList}}">
-              <view class="picker">{{ageList[ageIdx]}}<text>(点击可选)</text></view>
-            </picker>
-          </view>
+        <view style="clear: both;">
+          <mp-uploader files="{{photo}}" max-count="1" max-size="{{10 * 1024 * 1024}}" title="照片：" tips="最多上传一张图片" size-type="{{sizeType}}" sourceType="{{sourceType}}" delete="{{true}}" select="{{selectFile}}" upload="{{uplaodFile}}" binddelete="delimg" bindfail="uploadError" bindsuccess="uploadSuccess"></mp-uploader>
         </view>
-        <view class="type">
-          <label>品种：</label>
-          <view>
-            <picker bindchange="dogTypeChoose" value="{{typeIdx}}" range="{{dogType}}">
-              <view class="picker">{{dogType[typeIdx]}}<text>(点击可选)</text></view>
-            </picker>
-          </view>
-        </view>
-      </view>
-      <view style="clear: both;">
-        <mp-uploader files="{{photo}}" max-count="1" max-size="{{10 * 1024 * 1024}}" title="照片：" tips="最多上传一张图片" size-type="{{sizeType}}" sourceType="{{sourceType}}" delete="{{true}}" select="{{selectFile}}" upload="{{uplaodFile}}" binddelete="delimg" bindfail="uploadError" bindsuccess="uploadSuccess"></mp-uploader>
       </view>
     </view>
-  </view>
-  <view class="pageSub">
-    <rich-text nodes="{{pageSubTitle3}}"></rich-text>
-    <textarea class="articleDesc" placeholder="详细的信息可以提高修勾被领养的概率噢~" show-confirm-bar="{{false}}" adjust-position="{{true}}" focus="{{true}}" bindinput="getDesc"></textarea>
+    <view class="pageSub">
+      <rich-text nodes="{{pageSubTitle3}}"></rich-text>
+      <textarea class="articleDesc" placeholder="详细的信息可以提高修勾被领养的概率噢~" show-confirm-bar="{{false}}" adjust-position="{{true}}" bindinput="getDesc"></textarea>
+    </view>
   </view>
   <view class="publishBtn">
-    <button type="primary" plain="true" bindtap="publishArticle">发布</button>
+    <button class="button" bindtap="publishArticle">发布</button>
   </view>
+  <text>\n\n</text>
 </view>
-

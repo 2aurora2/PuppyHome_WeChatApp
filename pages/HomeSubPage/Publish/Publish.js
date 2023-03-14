@@ -9,10 +9,10 @@ var cos = new COS({
   SimpleUploadMethod: 'putObject', // 强烈建议，高级上传、批量上传内部对小文件做简单上传时使用putObject,sdk版本至少需要v1.3.0
 });
 
-const pageTitle = '<h1 style="color: #708090">领养公告发布</h1>'
-const pageSubTitle1 = '<h2 style="color: #708090">标题</h2>'
-const pageSubTitle2 = '<h2 style="color: #708090">修勾信息</h2>'
-const pageSubTitle3 = '<h2 style="color: #708090">具体领养描述</h2>'
+const pageTitle = '<h1 style="color: #696969">领养公告发布</h1>'
+const pageSubTitle1 = '<h3 style="color: #696969">标题</h2>'
+const pageSubTitle2 = '<h3 style="color: #696969">修勾信息</h2>'
+const pageSubTitle3 = '<h3 style="color: #696969">具体领养描述</h2>'
 Page({
   data: {
     dialogText: "发布成功",
@@ -45,7 +45,7 @@ Page({
     }],
     ageList: ['年龄不详', '1岁以下', '1岁', '2岁', '3岁', '4岁', '5岁', '6岁', '7岁', '8岁', '9岁', '10岁', '10岁以上'],
     ageIdx: 0,
-    dogType: ['拉布拉多', '贵宾牧羊犬', '哈士奇', '柯基'],
+    dogType: [],
     typeIdx: 0
   },
   onLoad() {

@@ -1,15 +1,10 @@
 var util = require("../../../utils/util.js");
 Page({
   data: {
-    adoptedList:[{
-      id: 1,
-      title: "有没有人来领养拉布拉多呀！很可爱噢~",
-      photo: "https://puppyhome-1317060763.cos.ap-guangzhou.myqcloud.com/swiper/img04.jpg",
-      publishTime: "2023-3-8 20:04:30"
-    }],
+    adoptedList:[],
     unAdoptedList:[],
-    currentAdopt: null,
-    currentUnAdopt: null
+    currentAdopt: 0,
+    currentUnAdopt: 0
   },
   onShow() {
     var that = this;

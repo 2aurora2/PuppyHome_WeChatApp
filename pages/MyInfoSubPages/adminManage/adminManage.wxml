@@ -12,5 +12,5 @@
   </view>
 </view>
 
-<!-- 弹窗 -->
+<!-- 是否确认删除此管理员弹窗 -->
 <mp-dialog buttons="{{btns}}" mask="true" mask-closable="{{false}}" show="{{isShowDialog}}" title="{{dialogText}}" bindbuttontap="ChooseRes"></mp-dialog>

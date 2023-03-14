@@ -4,8 +4,8 @@ Page({
   data: {
     AvatarUrl: "",
     bordeStyle: "",
-    isSuperAdmin: false,
-    isComAdmin: false,
+    isSuperAdmin: null,
+    isComAdmin: null,
   },
   onLoad() {
     // 用户身份标识

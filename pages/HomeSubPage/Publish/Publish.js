@@ -118,7 +118,7 @@ Page({
         cos.postObject({
           Bucket: 'puppyhome-1317060763', //对象储存桶的名称
           Region: 'ap-guangzhou', //所属地域
-          Key: 'dogs/' + cloudPath, //存储在userinfo文件夹里面
+          Key: 'dogs/' + cloudPath, //存储在dogs文件夹里面
           FilePath: filePath,
           onProgress: function (info) {
             console.log('进度条', JSON.stringify(info));

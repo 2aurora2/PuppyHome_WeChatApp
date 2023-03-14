@@ -1,1 +1,23 @@
-<text>拍照识修勾</text>
+<view class="container-all">
+  <image class="bg-img" src="{{bgUrl}}" mode="aspectFill"></image>
+  <image class="return" src="/image/Home/icons/return.png" bindtap="ReturnHome"></image>
+  <view class="upLoadImage" bindtap="UpLoadImg">
+    <text>开始识别</text>
+  </view>
+  <view class="Result" wx:if="{{isHaveIdentify&&isSuccessIdentify}}">
+    <view class="identifyRes">
+      <view class="resTitle">识别结果</view>
+      <view class="sub">
+        <text class="subTitle">品种：</text>
+        <text>{{identifyType}}</text>
+      </view>
+      <view class="sub">
+        <text class="subTitle">相似度：</text>
+        <text>{{identifyPercent}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 识别失败弹窗 -->
+<mp-dialog buttons="{{btns}}" mask="true" mask-closable="{{false}}" show="{{isHaveIdentify&&!isSuccessIdentify}}" title="{{failText}}" bindbuttontap="isRestartIdentify"></mp-dialog>

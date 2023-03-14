@@ -3,11 +3,11 @@
   height: 100%;
 }
 
-.DogImg{
+.DogImg {
   width: 100%;
 }
 
-.DogMsg{
+.DogMsg {
   width: 100%;
   position: absolute;
   top: 45%;
@@ -21,22 +21,22 @@
   -moz-box-sizing: border-box;
 }
 
-.msgName{
+.msgName {
   font-size: larger;
 }
 
-.msgValue{
+.msgValue {
   color: #708090;
 }
 
-.tipsText{
+.tipsText {
   background-color: #f1d4d8 !important;
   border-left: 5rpx #DC143C solid;
   padding: 10rpx;
   border-radius: 10rpx;
 }
 
-.userChoice{
+.userChoice {
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -44,22 +44,21 @@
   background: white !important;
 }
 
-.userBtns{
+.userBtns {
   display: flex;
   justify-content: space-around;
 }
 
-.btnMsg{
+.btnMsg {
   margin-left: 10rpx;
 }
 
-.btnContainer{
+.btnContainer {
   padding: 25rpx;
 }
 
-.Btn{
+.Btn {
   width: 50rpx;
   height: 50rpx;
   vertical-align: middle;
 }
-

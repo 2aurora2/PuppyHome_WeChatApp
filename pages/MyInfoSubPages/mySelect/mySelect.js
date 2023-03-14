@@ -1,66 +1,90 @@
-// pages/MyInfoSubPages/mySelect/mySelect.js
+var util = require("../../../utils/util.js");
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    articleList: [],
+    currentArticleList: [{
+      id: 1,
+      title: "有没有人来领养拉布拉多呀！很可爱噢~",
+      photo: "https://puppyhome-1317060763.cos.ap-guangzhou.myqcloud.com/swiper/img04.jpg",
+      publishTime: "2023-3-8 20:04:30"
+    }],
+    currentNum: 1,
+    perShow: 8
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
+  onLoad() {
+    var that = this;
+    wx.request({
+      url: 'http://localhost:3000/collect/mine',
+      method: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        token: wx.getStorageSync('token')
+      },
+      success(res) {
+        var articles = res.data.data.articles;
+        var dogs = res.data.data.dogs;
+        var finalList = [];
+        for (var i = 0; i < articles.length; i++) {
+          var obj = {};
+          obj['id'] = articles[i].id;
+          obj['title'] = articles[i].title;
+          var tmpTime = articles[i].publishTime;
+          obj['publishTime'] = util.js_date_time(tmpTime / 1000); // 时间戳转换
+          obj['photo'] = dogs[i].photo;
+          finalList.push(obj);
+        }
+        that.setData({
+          articleList: finalList
+        });
+        if (that.data.articleList != []) {
+          // 页面懒加载逻辑
+          var currentList = that.data.currentArticleList;
+          var currentN = that.data.currentNum;
+          if (that.data.articleList.length < that.data.perShow) {
+            that.setData({
+              currentArticleList: that.data.articleList,
+              currentNum: that.data.articleList.length
+            })
+          } else {
+            for (var i = currentN; i < currentN + that.data.perShow; i++) {
+              currentList.push(that.data.articleList[i])
+            }
+            that.setData({
+              currentArticleList: currentList,
+              currentNum: currentN + that.data.perShow
+            })
+          }
+        }
+      },
+      fail(res) {
+        console.log(res)
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
+  // 上拉触底lazy load
   onReachBottom() {
-
+    var currentList = this.data.currentArticleList;
+    var currentN = this.data.currentNum;
+    if (this.data.articleList.length - currentList.length < this.data.perShow) {
+      this.setData({
+        currentArticleList: this.data.articleList,
+        currentNum: this.data.articleList.length
+      })
+    } else {
+      for (var i = currentN; i < currentN + this.data.perShow; i++) {
+        currentList.push(this.data.articleList[i])
+      }
+      this.setData({
+        currentArticleList: currentList,
+        currentNum: currentN + this.data.perShow
+      })
+    }
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  getArticleDetails(e) {
+    wx.navigateTo({
+      url: '/pages/HomeSubPage/ArticleDetails/ArticleDetails?id=' + e.currentTarget.dataset.id + "&isOwner=false"
+    })
   }
 })

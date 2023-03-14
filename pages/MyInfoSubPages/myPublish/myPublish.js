@@ -1,66 +1,86 @@
-// pages/MyInfoSubPages/myPublish/myPublish.js
+var util = require("../../../utils/util.js");
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    adoptedList:[{
+      id: 1,
+      title: "有没有人来领养拉布拉多呀！很可爱噢~",
+      photo: "https://puppyhome-1317060763.cos.ap-guangzhou.myqcloud.com/swiper/img04.jpg",
+      publishTime: "2023-3-8 20:04:30"
+    }],
+    unAdoptedList:[],
+    currentAdopt: 0,
+    currentUnAdopt: 0
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
+  onLoad() {
+    var that = this;
+    // 拿到未被领养的公告列表
+    wx.request({
+      url: 'http://localhost:3000/article/mine/adopted',
+      method: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        token: wx.getStorageSync('token')
+      },
+      success(res){
+        var articles = res.data.data.articles;
+        var dogs = res.data.data.dogs;
+        var finalList = [];
+        for (var i = 0; i < articles.length; i++) {
+          var obj = {};
+          obj['id'] = articles[i].id;
+          obj['title'] = articles[i].title;
+          var tmpTime = articles[i].publishTime;
+          obj['publishTime'] = util.js_date_time(tmpTime / 1000); // 时间戳转换
+          obj['photo'] = dogs[i].photo;
+          finalList.push(obj);
+        }
+        that.setData({
+          unAdoptedList: finalList,
+          currentUnAdopt: finalList.length
+        })
+      },
+      fail(res){
+        console.log(res)
+      }
+    }),
+    // 拿到已被领养的公告列表
+    wx.request({
+      url: 'http://localhost:3000/article/mine/unadopted',
+      method: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        token: wx.getStorageSync('token')
+      },
+      success(res){
+        var articles = res.data.data.articles;
+        var dogs = res.data.data.dogs;
+        var finalList = [];
+        for (var i = 0; i < articles.length; i++) {
+          var obj = {};
+          obj['id'] = articles[i].id;
+          obj['title'] = articles[i].title;
+          var tmpTime = articles[i].publishTime;
+          obj['publishTime'] = util.js_date_time(tmpTime / 1000); // 时间戳转换
+          obj['photo'] = dogs[i].photo;
+          finalList.push(obj);
+        }
+        that.setData({
+          adoptedList: finalList,
+          currentAdopt: finalList.length
+        })
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  getArticleDetails(e) {
+    wx.navigateTo({
+      url: '/pages/HomeSubPage/ArticleDetails/ArticleDetails?id=' + e.currentTarget.dataset.id + "&isOwner=true"
+    })
   }
 })

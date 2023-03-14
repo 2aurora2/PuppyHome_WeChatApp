@@ -86,7 +86,7 @@ Page({
   },
   getArticleDetails(e){
     wx.navigateTo({
-      url: '/pages/HomeSubPage/ArticleDetails/ArticleDetails?id=' + e.currentTarget.dataset.id,
+      url: '/pages/HomeSubPage/ArticleDetails/ArticleDetails?id=' + e.currentTarget.dataset.id + "&isOwner=false"
     })
   }
 })

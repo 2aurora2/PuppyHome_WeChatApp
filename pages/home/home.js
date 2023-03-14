@@ -1,4 +1,4 @@
-var util = require("../../utils/util.js")
+var util = require("../../utils/util.js");
 const app = getApp();
 // 用于currentArticleList测试
 
@@ -21,7 +21,7 @@ Page({
       text: "前往"
     }],
     dialogText: "首次登录请前往完善个人信息",
-    isshow: "",
+    isshow: null,
     articleList: [],
     currentArticleList: [{
       id: 1,
@@ -135,7 +135,7 @@ Page({
   },
   getArticleDetails(e) {
     wx.navigateTo({
-      url: '/pages/HomeSubPage/ArticleDetails/ArticleDetails?id=' + e.currentTarget.dataset.id,
+      url: '/pages/HomeSubPage/ArticleDetails/ArticleDetails?id=' + e.currentTarget.dataset.id + "&isOwner=false"
     })
   }
 })

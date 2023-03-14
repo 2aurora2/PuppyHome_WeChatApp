@@ -3,4 +3,16 @@
     <image src="/image/Home/icons/title_icon.png"></image>
     <text>我的收藏</text>
   </view>
+  <view class="articleList">
+    <view class="articleItem" wx:for="{{currentArticleList}}" wx:key="id" bindtap="getArticleDetails" data-id="{{item.id}}">
+      <image class="itemImage" src="{{item.photo}}" style="border-radius: 20rpx;"></image>
+      <view class="articleMsg">
+        <text class="articleTitle">{{item.title}}\n</text>
+        <text class="articleTime">{{item.publishTime}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="noArticle" wx:if="{{currentNum === 0?true:false}}">
+    <text>Tips：暂无收藏内容，快去主页看看吧！</text>
+  </view>
 </view>

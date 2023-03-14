@@ -21,7 +21,7 @@ Page({
     dogGender: "雄性",
     genderList: ['雌性', '雄性'],
     ageList: ['年龄不详', '1岁以下', '1岁', '2岁', '3岁', '4岁', '5岁', '6岁', '7岁', '8岁', '9岁', '10岁', '10岁以上'],
-    isShowDelete: true,
+    isShowDelete: false,
     isCollect: false,
     isConfirmDelete: false,
     isConfirmAdopt: false,
@@ -40,11 +40,14 @@ Page({
     error: "请勿重复提交领养申请！",
     isShowError: false,
     success: "成功发送领养申请！",
-    isShowSuccess: false
+    isShowSuccess: false,
+    isOwner: null
   },
   onLoad(options) {
+    console.log(options);
     this.setData({
-      articleId: options.id
+      articleId: options.id,
+      isOwner: JSON.parse(options.isOwner)
     })
     // 删除按钮展示与否
     if (app.globalData.userInfo.authentication === 1 || app.globalData.userInfo.authentication === 2) {

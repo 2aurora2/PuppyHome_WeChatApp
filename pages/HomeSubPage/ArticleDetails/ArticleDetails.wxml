@@ -19,15 +19,15 @@
   </view>
   <view class="userChoice">
     <view class="userBtns">
-      <view class="btnContainer" wx:if="{{isShowDelete}}" bindtap="deleteHandle">
+      <view class="btnContainer" wx:if="{{isShowDelete||isOwner}}" bindtap="deleteHandle">
         <image class="Btn" src="/image/Home/icons/delete.png"></image>
         <text class="btnMsg">删除</text>
       </view>
-      <view class="btnContainer" bindtap="collectHandle">
+      <view class="btnContainer" bindtap="collectHandle" wx:if="{{!isOwner}}">
         <image class="Btn" src="{{collectUrl}}"></image>
         <text class="btnMsg">{{collectTxt}}</text>
       </view>
-      <view class="btnContainer" bindtap="adoptHandle">
+      <view class="btnContainer" bindtap="adoptHandle" wx:if="{{!isOwner}}">
         <image class="Btn" src="/image/Home/icons/willing.png"></image>
         <text class="btnMsg">领养</text>
       </view>

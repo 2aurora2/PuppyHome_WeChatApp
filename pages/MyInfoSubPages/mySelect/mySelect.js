@@ -11,7 +11,7 @@ Page({
     currentNum: 1,
     perShow: 8
   },
-  onLoad() {
+  onShow() {
     var that = this;
     wx.request({
       url: 'http://localhost:3000/collect/mine',

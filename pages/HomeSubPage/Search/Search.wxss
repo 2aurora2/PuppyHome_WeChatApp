@@ -5,6 +5,8 @@
   display: flex;
   justify-content: space-between;
   margin-top: 10rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
 }
 
 .searchImg{

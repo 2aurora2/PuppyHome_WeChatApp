@@ -8,14 +8,14 @@ Page({
       publishTime: "2023-3-8 20:04:30"
     }],
     unAdoptedList:[],
-    currentAdopt: 0,
-    currentUnAdopt: 0
+    currentAdopt: null,
+    currentUnAdopt: null
   },
-  onLoad() {
+  onShow() {
     var that = this;
     // 拿到未被领养的公告列表
     wx.request({
-      url: 'http://localhost:3000/article/mine/adopted',
+      url: 'http://localhost:3000/article/mine/unadopted',
       method: 'GET',
       header: {
         'content-type': 'application/x-www-form-urlencoded'
@@ -47,7 +47,7 @@ Page({
     }),
     // 拿到已被领养的公告列表
     wx.request({
-      url: 'http://localhost:3000/article/mine/unadopted',
+      url: 'http://localhost:3000/article/mine/adopted',
       method: 'GET',
       header: {
         'content-type': 'application/x-www-form-urlencoded'
@@ -72,6 +72,7 @@ Page({
           adoptedList: finalList,
           currentAdopt: finalList.length
         })
+        console.log(that.data.adoptedList)
       },
       fail(res){
         console.log(res)

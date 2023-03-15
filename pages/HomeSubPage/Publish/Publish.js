@@ -152,7 +152,7 @@ Page({
   // Func03：delimg删除图片
   // detail为{index, item}，index表示删除的图片的下标，item为图片对象。
   delimg(e) {
-    this.data.files.splice(this.data.files.findIndex(item => item == e.detail.item), 1)
+    this.data.photo.splice(this.data.photo.findIndex(item => item == e.detail.item), 1)
   },
   // Func04：uploadError，上传失败函数
   uploadError(e) {

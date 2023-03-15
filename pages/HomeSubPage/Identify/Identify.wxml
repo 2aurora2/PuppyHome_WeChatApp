@@ -21,3 +21,11 @@
 
 <!-- 识别失败弹窗 -->
 <mp-dialog buttons="{{btns}}" mask="true" mask-closable="{{false}}" show="{{isHaveIdentify&&!isSuccessIdentify}}" title="{{failText}}" bindbuttontap="isRestartIdentify"></mp-dialog>
+
+<!-- loading -->
+<view class="newtons-cradle" wx:if="{{isShowLoading}}">
+<view class="newtons-cradle__dot"></view>
+<view class="newtons-cradle__dot"></view>
+<view class="newtons-cradle__dot"></view>
+<view class="newtons-cradle__dot"></view>
+</view>

@@ -17,6 +17,7 @@ Page({
     identifyPercent: null,
     isHaveIdentify: false,
     isSuccessIdentify: null,
+    isShowLoading: false,
     btns:[{
       text: '确认'
     }],
@@ -64,6 +65,9 @@ Page({
               toIdentifyUrl: app.globalData.cdnHost + 'identify/' + cloudPath
             }),
             // 给后端传送要识别的图片并拿到识别结果
+            that.setData({
+              isShowLoading: true
+            })
             wx.request({
               url: 'url', // TODO->识别接口
               method: 'GET',
@@ -75,6 +79,7 @@ Page({
               },
               success(res){
                 that.setData({
+                  isShowLoading: false,
                   isHaveIdentify: true,
                   isSuccessIdentify: true
                   // TODO->拿到的数据identifyPercent和identifyType
@@ -82,6 +87,7 @@ Page({
               },
               fail(res){
                 that.setData({
+                  isShowLoading: false,
                   isHaveIdentify: true,
                   isSuccessIdentify: false
                 })

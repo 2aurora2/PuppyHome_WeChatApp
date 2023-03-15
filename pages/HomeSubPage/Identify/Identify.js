@@ -68,21 +68,23 @@ Page({
             that.setData({
               isShowLoading: true
             })
+            setTimeout(function () {}, 1000);
             wx.request({
-              url: 'url', // TODO->识别接口
+              url: 'http://localhost:3000/image/predict', 
               method: 'GET',
               header: {
                 'content-type': 'application/x-www-form-urlencoded'
               },
               data: {
-                // TODO->图片Url
+                url: that.data.toIdentifyUrl
               },
               success(res){
                 that.setData({
                   isShowLoading: false,
                   isHaveIdentify: true,
-                  isSuccessIdentify: true
-                  // TODO->拿到的数据identifyPercent和identifyType
+                  isSuccessIdentify: true,
+                  identifyType: res.data.data.className,
+                  identifyPercent: res.data.data.probability
                 })
               },
               fail(res){

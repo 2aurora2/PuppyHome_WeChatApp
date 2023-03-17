@@ -79,6 +79,13 @@ Page({
       }
     })
   },
+  onShow(){
+    if(app.globalData.userInfo.haveNewMsg === true){
+      wx.showTabBarRedDot({
+        index: 1,
+      })
+    }
+  },
   // 上拉触底lazy load
   onReachBottom() {
     var currentList = this.data.currentArticleList;

@@ -15,25 +15,25 @@
   width: 100%;
 }
 
-.avatar{
+.avatar {
   position: absolute;
   top: 500rpx;
   left: 38%;
 }
 
-.avatar image{
+.avatar image {
   width: 170rpx;
   height: 170rpx;
   border-radius: 50%;
   overflow: hidden;
 }
 
-.MyInfoList{
+.MyInfoList {
   position: absolute;
   top: 700rpx;
   width: 100%;
 }
 
-.MyInfoList mp-cell{
+.MyInfoList mp-cell {
   width: 100%;
 }

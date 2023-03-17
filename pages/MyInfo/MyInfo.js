@@ -6,6 +6,7 @@ Page({
     bordeStyle: "",
     isSuperAdmin: null,
     isComAdmin: null,
+    hasNewMsg: false
   },
   onLoad() {
     // 用户身份标识
@@ -32,6 +33,12 @@ Page({
         isSuperAdmin: true
       })
     }
+  },
+  onShow(){
+    // 用户是否有新消息
+    this.setData({
+      hasNewMsg: app.globalData.userInfo.haveNewMsg
+    })
   },
   ToSetUserInfo(){
     wx.navigateTo({

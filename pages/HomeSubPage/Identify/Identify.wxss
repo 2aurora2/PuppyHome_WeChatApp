@@ -46,7 +46,7 @@ page {
   width: 60%;
   position: absolute;
   left: 50%;
-  top: 30%;
+  top: 40%;
   transform: translate(-50%, -50%);
   /* 50%为自身尺寸的一半 */
   -webkit-transform: translate(-50%, -50%);
@@ -156,5 +156,10 @@ page {
    transform: rotate(-70deg);
    animation-timing-function: ease-in;
   }
+ }
+
+ .identifyImg image{
+   width: 400rpx;
+   height: 350rpx;
  }
  

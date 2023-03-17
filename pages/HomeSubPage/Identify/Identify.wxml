@@ -6,6 +6,7 @@
   </view>
   <view class="Result" wx:if="{{isHaveIdentify&&isSuccessIdentify}}">
     <view class="identifyRes">
+      <view class="identifyImg"><image src="{{toIdentifyUrl}}"></image></view>
       <view class="resTitle">识别结果</view>
       <view class="sub">
         <text class="subTitle">品种：</text>

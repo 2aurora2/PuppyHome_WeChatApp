@@ -30,12 +30,16 @@ Page({
   },
   isRestartIdentify(){
     this.setData({
-      isSuccessIdentify: true,
+      isSuccessIdentify: null,
       isHaveIdentify: false
     })
   },
   // 上传并识别图片Func
   UpLoadImg(){
+    this.setData({
+      isSuccessIdentify: null,
+      isHaveIdentify: false
+    })
     var that = this;
     // 选择图片上传
     wx.chooseMedia({

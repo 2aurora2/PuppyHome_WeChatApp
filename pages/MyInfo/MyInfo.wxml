@@ -11,7 +11,7 @@
   <mp-cell class="setUserInfo" value="个人信息" hover="true" link="true" bindtap="ToSetUserInfo"></mp-cell>
   <mp-cell class="myPublish" value="我的发布" hover="true" link="true" bindtap="ToMyPublish"></mp-cell>
   <mp-cell class="mySelect" value="我的收藏" hover="true" link="true" bindtap="ToMySelect"></mp-cell>
-  <mp-cell class="myMessage" value="我的消息" hover="true" link="true" bindtap="ToMyMessage"></mp-cell>
+  <mp-cell class="myMessage" hover="true" link="true" bindtap="ToMyMessage"><view>我的消息<text class="redTxt" wx:if="{{hasNewMsg}}">（新消息）</text></view></mp-cell>
   <mp-cell class="applyForAdmin" value="管理员申请" hover="true" link="true" bindtap="ToApplyForAdmin" wx:if="{{!isSuperAdmin&&!isComAdmin}}"></mp-cell>
   <block wx:if="{{isSuperAdmin}}">
     <mp-cell class="AdminAudit" value="管理员申请审核" hover="true" link="true" bindtap="ToAdminAudit"></mp-cell>

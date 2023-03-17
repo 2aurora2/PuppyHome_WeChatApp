@@ -37,3 +37,7 @@
 .MyInfoList mp-cell {
   width: 100%;
 }
+
+.redTxt{
+  color: red;
+}

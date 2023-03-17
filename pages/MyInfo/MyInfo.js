@@ -6,7 +6,7 @@ Page({
     bordeStyle: "",
     isSuperAdmin: null,
     isComAdmin: null,
-    hasNewMsg: false
+    hasNewMsg: true
   },
   onLoad() {
     // 用户身份标识
@@ -39,6 +39,11 @@ Page({
     this.setData({
       hasNewMsg: app.globalData.userInfo.haveNewMsg
     })
+    if(this.data.hasNewMsg === true){
+      wx.showTabBarRedDot({
+        index: 1,
+      })
+    }
   },
   ToSetUserInfo(){
     wx.navigateTo({
@@ -63,6 +68,7 @@ Page({
     })
   },
   ToMyMessage(){
+    app.globalData.userInfo.haveNewMsg = false;
     wx.navigateTo({
       url: "/pages/MyInfoSubPages/myMessage/myMessage",
       success(res) {

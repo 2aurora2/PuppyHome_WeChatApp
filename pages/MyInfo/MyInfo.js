@@ -6,7 +6,7 @@ Page({
     bordeStyle: "",
     isSuperAdmin: null,
     isComAdmin: null,
-    hasNewMsg: true
+    hasNewMsg: false
   },
   onLoad() {
     // 用户身份标识

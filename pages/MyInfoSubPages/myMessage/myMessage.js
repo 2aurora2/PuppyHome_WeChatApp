@@ -2,6 +2,9 @@ Page({
   data: {
     adopters: [],
     numOfAdopter: 0,
+    currentAdopters: [],
+    currentNum: 0,
+    perShow: 8,
     currentAdopter: null,
     agreeBtns: [{
       text: "考虑一下"
@@ -37,13 +40,52 @@ Page({
           finalList.push(obj);
         }
         that.setData({
-          adopters: finalList
+          adopters: finalList,
+          numOfAdopter: finalList.length
         });
+        if (that.data.adopters != []) {
+          // 页面懒加载逻辑
+          var currentList = that.data.currentAdopters;
+          var currentN = that.data.currentNum;
+          if (that.data.adopters.length < that.data.perShow) {
+            that.setData({
+              currentAdopters: that.data.adopters,
+              currentNum: that.data.adopters.length
+            })
+          } else {
+            for (var i = currentN; i < currentN + that.data.perShow; i++) {
+              currentList.push(that.data.adopters[i])
+            }
+            that.setData({
+              currentAdopters: currentList,
+              currentNum: currentN + that.data.perShow
+            })
+          }
+        }
       },
       fail(res) {
         console.log(res)
       }
     })
+  },
+  // 上拉触底lazy load
+  onReachBottom() {
+    var currentList = this.data.currentAdopters;
+    var currentN = this.data.currentNum;
+    if (this.data.adopters.length - currentList.length < this.data.perShow) {
+      this.setData({
+        currentAdopters: this.data.adopters,
+        currentNum: this.data.adopters.length
+      })
+    } else {
+      for (var i = currentN; i < currentN + this.data.perShow; i++) {
+        currentList.push(this.data.adopters[i])
+      }
+      this.setData({
+        currentAdopters: currentList,
+        currentNum: currentN + this.data.perShow
+      })
+    }
   },
   agreeAdoptHandle(e) {
     if (e.detail.index === 0) {

@@ -5,7 +5,7 @@
       <text>消息列表<text style="color: #808080; font-size: medium;">（点击用户头像进行消息处理）</text></text>
     </view>
     <view class="adopterList">
-      <view class="adopterItem" wx:for="{{adopters}}" wx:key="id" data-idx="id"> 
+      <view class="adopterItem" wx:for="{{currentAdopters}}" wx:key="id" data-idx="id"> 
         <view class="img" bindtap="isOrNotAgreeAdopt" data-idx="{{item.id}}">
           <image src="{{item.avatar}}"></image>
         </view>

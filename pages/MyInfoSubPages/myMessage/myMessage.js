@@ -28,6 +28,7 @@ Page({
         token: wx.getStorageSync('token')
       },
       success(res) {
+        console.log(res.data)
         var getMsg = res.data.data.adopt;
         var finalList = [];
         for (var i = 0; i < getMsg.length; ++i) {

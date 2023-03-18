@@ -34,18 +34,29 @@ Page({
       })
     }
   },
-  onShow(){
+  onShow() {
     // 用户是否有新消息
-    this.setData({
-      hasNewMsg: JSON.parse(app.globalData.userInfo.haveNewMsg)
-    })
-    if(this.data.hasNewMsg === true){
+    if (app.globalData.userInfo.haveNewMsg === "true") {
+      this.setData({
+        hasNewMsg: true
+      })
+    } else {
+      this.setData({
+        hasNewMsg: false
+      })
+    }
+    console.log(this.data.hasNewMsg)
+    if (this.data.hasNewMsg === true) {
       wx.showTabBarRedDot({
+        index: 1,
+      })
+    } else {
+      wx.hideTabBarRedDot({
         index: 1,
       })
     }
   },
-  ToSetUserInfo(){
+  ToSetUserInfo() {
     wx.navigateTo({
       url: "/pages/MyInfoSubPages/setUserInfo/setUserInfo",
       success(res) {
@@ -56,7 +67,7 @@ Page({
       }
     })
   },
-  ToMySelect(){
+  ToMySelect() {
     wx.navigateTo({
       url: "/pages/MyInfoSubPages/mySelect/mySelect",
       success(res) {
@@ -67,8 +78,9 @@ Page({
       }
     })
   },
-  ToMyMessage(){
+  ToMyMessage() {
     app.globalData.userInfo.haveNewMsg = "false";
+    console.log(app.globalData.userInfo.haveNewMsg);
     wx.navigateTo({
       url: "/pages/MyInfoSubPages/myMessage/myMessage",
       success(res) {
@@ -79,7 +91,7 @@ Page({
       }
     })
   },
-  ToApplyForAdmin(){
+  ToApplyForAdmin() {
     wx.navigateTo({
       url: "/pages/MyInfoSubPages/applyForAdmin/applyForAdmin",
       success(res) {
@@ -90,7 +102,7 @@ Page({
       }
     })
   },
-  ToAdminAudit(){
+  ToAdminAudit() {
     wx.navigateTo({
       url: "/pages/MyInfoSubPages/adminAudit/adminAudit",
       success(res) {
@@ -101,7 +113,7 @@ Page({
       }
     })
   },
-  ToAdminManage(){
+  ToAdminManage() {
     wx.navigateTo({
       url: "/pages/MyInfoSubPages/adminManage/adminManage",
       success(res) {
@@ -112,7 +124,7 @@ Page({
       }
     })
   },
-  ToAboutUs(){
+  ToAboutUs() {
     wx.navigateTo({
       url: "/pages/MyInfoSubPages/aboutUs/aboutUs",
       success(res) {
@@ -123,7 +135,7 @@ Page({
       }
     })
   },
-  ToMyPublish(){
+  ToMyPublish() {
     wx.navigateTo({
       url: "/pages/MyInfoSubPages/myPublish/myPublish",
       success(res) {

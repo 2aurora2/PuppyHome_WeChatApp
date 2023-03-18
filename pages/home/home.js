@@ -79,9 +79,13 @@ Page({
       }
     })
   },
-  onShow(){
-    if(JSON.parse(app.globalData.userInfo.haveNewMsg) === true){
+  onShow() {
+    if (app.globalData.userInfo.haveNewMsg === "true") {
       wx.showTabBarRedDot({
+        index: 1,
+      })
+    } else {
+      wx.hideTabBarRedDot({
         index: 1,
       })
     }

@@ -40,8 +40,13 @@ App({
                     token: wx.getStorageSync('token')
                   },
                   success(res) {
-                    that.globalData.userInfo = res.data.data.user; //存储用户信息
-                    console.log(res.data.data.user);
+                    // that.globalData.userInfo = res.data.data.user; //存储用户信息
+                    var userObj = res.data.data.user;
+                    // console.log(userObj)
+                    userObj['haveNewMsg'] = res.data.data.haveNewMsg;
+                    // console.log(userObj)
+                    that.globalData.userInfo = userObj;
+                    // console.log(res.data.data.user);
                   },
                   fail(res) {
                     console.log(res);

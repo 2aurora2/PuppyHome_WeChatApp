@@ -18,24 +18,24 @@ Page({
     isHaveIdentify: false,
     isSuccessIdentify: null,
     isShowLoading: false,
-    btns:[{
+    btns: [{
       text: '确认'
     }],
     failText: "识别失败，请重新识别！"
   },
-  ReturnHome(){
+  ReturnHome() {
     wx.navigateBack({
       delta: 1
     })
   },
-  isRestartIdentify(){
+  isRestartIdentify() {
     this.setData({
       isSuccessIdentify: null,
       isHaveIdentify: false
     })
   },
   // 上传并识别图片Func
-  UpLoadImg(){
+  UpLoadImg() {
     this.setData({
       isSuccessIdentify: null,
       isHaveIdentify: false
@@ -44,9 +44,9 @@ Page({
     // 选择图片上传
     wx.chooseMedia({
       count: 1, // 上传1张图片
-      mediaType: ['image'], 
-      sourceType: ['album','camera'], // 拍摄图片或从相册选择图片
-      success(res){
+      mediaType: ['image'],
+      sourceType: ['album', 'camera'], // 拍摄图片或从相册选择图片
+      success(res) {
         var filePath = res.tempFiles[0].tempFilePath;
         var cloudPath = filePath.substr(filePath.lastIndexOf('/') + 1)
         // 使用腾讯云COS对象存储
@@ -65,17 +65,17 @@ Page({
           } else {
             // 上传成功赋值toIdentifyUrl
             that.setData({
-              // 要识别的图片地址
-              toIdentifyUrl: app.globalData.cdnHost + 'identify/' + cloudPath
-            }),
-            // 给后端传送要识别的图片并拿到识别结果
-            that.setData({
-              isShowLoading: true
-            })
+                // 要识别的图片地址
+                toIdentifyUrl: app.globalData.cdnHost + 'identify/' + cloudPath
+              }),
+              // 给后端传送要识别的图片并拿到识别结果
+              that.setData({
+                isShowLoading: true
+              })
             setTimeout(function () {}, 1000);
             console.log(that.data.toIdentifyUrl);
             wx.request({
-              url: 'http://localhost:3000/image/predict', 
+              url: 'http://localhost:3000/image/predict',
               method: 'GET',
               header: {
                 'content-type': 'application/x-www-form-urlencoded'
@@ -83,16 +83,19 @@ Page({
               data: {
                 url: that.data.toIdentifyUrl
               },
-              success(res){
+              success(res) {
                 that.setData({
                   isShowLoading: false,
                   isHaveIdentify: true,
                   isSuccessIdentify: true,
                   identifyType: res.data.data.className,
-                  identifyPercent: res.data.data.probability
                 })
+                var percent = String(res.data.data.probability * 100) + '%';
+                that.setData({
+                  identifyPercent: percent
+                });
               },
-              fail(res){
+              fail(res) {
                 that.setData({
                   isShowLoading: false,
                   isHaveIdentify: true,

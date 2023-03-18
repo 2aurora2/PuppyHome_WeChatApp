@@ -25,13 +25,19 @@ Page({
     adoptBtns: [{
       text: "确认"
     }],
+    setInfoBtns:[{
+      text: "前往"
+    }],
     deleteDialogText: "是否确认删除此领养公告？",
     adoptDialogText: "是否向送养人发送领养意愿？",
     error: "请勿重复提交领养申请！",
     isShowError: false,
     success: "成功发送领养申请！",
     isShowSuccess: false,
-    isOwner: null
+    isOwner: null,
+    isHaveEvenLogin01: true,
+    isHaveEvenLogin02: true,
+    toSetInfoTxt: "完善个人信息后才可使用此功能！"
   },
   onLoad(options) {
     console.log(options);
@@ -92,54 +98,60 @@ Page({
     })
   },
   collectHandle() {
-    var that = this;
-    if (that.data.isCollect === false) {
-      // 添加收藏wx.request
-      wx.request({
-        url: 'http://localhost:3000/collect/add',
-        method: 'POST',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded'
-        },
-        data: {
-          token: wx.getStorageSync('token'),
-          articleId: that.data.articleId
-        },
-        success(res) {
-          console.log(res);
-          that.setData({
-            isCollect: true,
-            collectUrl: "/image/Home/icons/evenCollect.png",
-            collectTxt: "已收藏"
-          })
-        },
-        fail(res) {
-          console.log(res)
-        }
-      })
-    } else {
-      // 取消收藏wx.request
-      wx.request({
-        url: 'http://localhost:3000/collect/delete',
-        method: 'POST',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded'
-        },
-        data: {
-          token: wx.getStorageSync('token'),
-          articleId: that.data.articleId
-        },
-        success(res) {
-          console.log(res);
-          that.setData({
-            isCollect: false,
-            collectUrl: "/image/Home/icons/noCollect.png",
-            collectTxt: "收藏"
-          })
-        },
-        fail(res) {
-          console.log(res)
-        }
+    if (app.globalData.hasEvenLogin === true) {
+      var that = this;
+      if (that.data.isCollect === false) {
+        // 添加收藏wx.request
+        wx.request({
+          url: 'http://localhost:3000/collect/add',
+          method: 'POST',
+          header: {
+            'content-type': 'application/x-www-form-urlencoded'
+          },
+          data: {
+            token: wx.getStorageSync('token'),
+            articleId: that.data.articleId
+          },
+          success(res) {
+            console.log(res);
+            that.setData({
+              isCollect: true,
+              collectUrl: "/image/Home/icons/evenCollect.png",
+              collectTxt: "已收藏"
+            })
+          },
+          fail(res) {
+            console.log(res)
+          }
+        })
+      } else {
+        // 取消收藏wx.request
+        wx.request({
+          url: 'http://localhost:3000/collect/delete',
+          method: 'POST',
+          header: {
+            'content-type': 'application/x-www-form-urlencoded'
+          },
+          data: {
+            token: wx.getStorageSync('token'),
+            articleId: that.data.articleId
+          },
+          success(res) {
+            console.log(res);
+            that.setData({
+              isCollect: false,
+              collectUrl: "/image/Home/icons/noCollect.png",
+              collectTxt: "收藏"
+            })
+          },
+          fail(res) {
+            console.log(res)
+          }
+        })
+      }
+    }else{
+      this.setData({
+        isHaveEvenLogin01: false
       })
     }
   },
@@ -149,9 +161,15 @@ Page({
     })
   },
   adoptHandle() {
-    this.setData({
-      isConfirmAdopt: true
-    })
+    if(app.globalData.hasEvenLogin === true){
+      this.setData({
+        isConfirmAdopt: true
+      })
+    }else{
+      this.setData({
+        isHaveEvenLogin02: false
+      })
+    }
   },
   isOrnotDelete(e) {
     if (e.detail.index === 0) {
@@ -230,5 +248,20 @@ Page({
     this.setData({
       isShowSuccess: false
     })
-  }
+  },
+  ToSetUserInfo() {
+    this.setData({
+      isHaveEvenLogin01: true,
+      isHaveEvenLogin02: true
+    })
+    wx.navigateTo({
+      url: "/pages/MyInfoSubPages/setUserInfo/setUserInfo",
+      success(res) {
+        console.log(res);
+      },
+      fail(res) {
+        console.log(res)
+      }
+    })
+  },
 })

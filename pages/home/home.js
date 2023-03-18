@@ -18,8 +18,10 @@ Page({
     btns: [{
       text: "前往"
     }],
-    dialogText: "首次登录请前往完善个人信息",
+    dialogText: "首次登录请前往完善个人信息！",
+    disabledPublishText: "完善个人信息后方可发布！",
     isshow: null,
+    isTapPublish: null,
     articleList: [],
     currentArticleList: [],
     currentNum: 0,
@@ -80,6 +82,9 @@ Page({
     })
   },
   onShow() {
+    this.setData({
+      isTapPublish: false
+    })
     if (app.globalData.userInfo.haveNewMsg === "true") {
       wx.showTabBarRedDot({
         index: 1,
@@ -126,9 +131,15 @@ Page({
   },
   // 发布页面跳转
   ToPublish() {
-    wx.navigateTo({
-      url: "/pages/HomeSubPage/Publish/Publish"
-    })
+    if(app.globalData.hasEvenLogin === true){
+      wx.navigateTo({
+        url: "/pages/HomeSubPage/Publish/Publish"
+      })
+    }else{
+      this.setData({
+        isTapPublish: true
+      })
+    }
   },
   // 搜索页面跳转
   ToSearch() {

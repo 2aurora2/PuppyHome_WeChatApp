@@ -50,3 +50,9 @@
 
 <!-- 成功发送收养申请提示 -->
 <mp-dialog buttons="{{adoptBtns}}" mask="true" mask-closable="{{false}}" show="{{isShowSuccess}}" title="{{success}}" bindbuttontap="successAdoptDialog"></mp-dialog>
+
+<!-- 未完善信息不可收藏弹窗 -->
+<mp-dialog buttons="{{setInfoBtns}}" mask="true" mask-closable="{{false}}" show="{{!isHaveEvenLogin01}}" title="{{toSetInfoTxt}}" bindbuttontap="ToSetUserInfo"></mp-dialog>
+
+<!-- 未完善信息不可领养弹窗 -->
+<mp-dialog buttons="{{setInfoBtns}}" mask="true" mask-closable="{{false}}" show="{{!isHaveEvenLogin02}}" title="{{toSetInfoTxt}}" bindbuttontap="ToSetUserInfo"></mp-dialog>

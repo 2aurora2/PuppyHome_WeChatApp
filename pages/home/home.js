@@ -131,11 +131,11 @@ Page({
   },
   // 发布页面跳转
   ToPublish() {
-    if(app.globalData.hasEvenLogin === true){
+    if (app.globalData.hasEvenLogin === true) {
       wx.navigateTo({
         url: "/pages/HomeSubPage/Publish/Publish"
       })
-    }else{
+    } else {
       this.setData({
         isTapPublish: true
       })

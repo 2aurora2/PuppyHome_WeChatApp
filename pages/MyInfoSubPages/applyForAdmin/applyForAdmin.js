@@ -10,10 +10,8 @@ Page({
     reason: "",
     showSuccess: false,
     successText: "",
-    isRepeatApply: false,
-    repeatText: "请勿重复申请！",
     applyFail: false,
-    failText: "因未登录等原因申请失败！"
+    failText: "申请失败！"
   },
   ReadyApply() {
     this.setData({
@@ -66,7 +64,7 @@ Page({
             name: "",
             tele: "",
             reason: "",
-            isRepeatApply: true
+            applyFail: true
           })
         }
       },

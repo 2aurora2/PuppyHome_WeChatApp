@@ -1,8 +1,14 @@
-<!-- 弹窗 -->
+<!-- enter弹窗 -->
 <mp-dialog buttons="{{btns}}" mask="true" mask-closable="{{false}}" show="{{isshow}}" title="{{dialogText}}" bindbuttontap="ReadyApply"></mp-dialog>
+<!-- 成功申请弹窗 -->
 <mp-dialog buttons="{{btns}}" mask="true" mask-closable="{{false}}" show="{{showSuccess}}" title="{{successText}}" bindbuttontap="SuccessApply"></mp-dialog>
+<!-- 重复申请弹窗 -->
+<mp-dialog buttons="{{btns}}" mask="true" mask-closable="{{false}}" show="{{isRepeatApply}}" title="{{repeatText}}" bindbuttontap="repeatApply"></mp-dialog>
+<!-- 申请失败弹窗 -->
+<mp-dialog buttons="{{btns}}" mask="true" mask-closable="{{false}}" show="{{applyFail}}" title="{{failText}}" bindbuttontap="failApply"></mp-dialog>
 
-<view class="formPage" wx:if="{{!(isshow || showSuccess)}}">
+
+<view class="formPage" wx:if="{{!(isshow || showSuccess || isRepeatApply || applyFail)}}">
   <view class="formTitle"><text>申请人信息</text></view>
   <view class="MsgForm">
     <view class="realName">

@@ -58,7 +58,7 @@ App({
                   "gender": 1,
                   "telephone": "12345678910",
                   "authentication": 0, //用户身份默认为普通用户("0")
-                  "haveNewMsg" : false
+                  "haveNewMsg" : "false"
                 }
               }
             }

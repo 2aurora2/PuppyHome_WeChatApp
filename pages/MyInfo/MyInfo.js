@@ -37,7 +37,7 @@ Page({
   onShow(){
     // 用户是否有新消息
     this.setData({
-      hasNewMsg: app.globalData.userInfo.haveNewMsg
+      hasNewMsg: JSON.parse(app.globalData.userInfo.haveNewMsg)
     })
     if(this.data.hasNewMsg === true){
       wx.showTabBarRedDot({
@@ -68,7 +68,7 @@ Page({
     })
   },
   ToMyMessage(){
-    app.globalData.userInfo.haveNewMsg = false;
+    app.globalData.userInfo.haveNewMsg = "false";
     wx.navigateTo({
       url: "/pages/MyInfoSubPages/myMessage/myMessage",
       success(res) {

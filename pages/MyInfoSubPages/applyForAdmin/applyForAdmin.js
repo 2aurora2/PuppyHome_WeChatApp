@@ -9,7 +9,11 @@ Page({
     tele: "",
     reason: "",
     showSuccess: false,
-    successText: ""
+    successText: "",
+    isRepeatApply: false,
+    repeatText: "请勿重复申请！",
+    applyFail: false,
+    failText: "因未登录等原因申请失败！"
   },
   ReadyApply() {
     this.setData({
@@ -47,19 +51,47 @@ Page({
         description: this.data.reason
       },
       success(res) {
-        console.log(res.data),
-        that.setData({
+        console.log(res.data);
+        if (res.data.code === 200) {
+          that.setData({
             name: "",
             tele: "",
             reason: "",
             showSuccess: true,
             successText: res.data.message
+          })
+        } else {
+          // 重复申请错误
+          that.setData({
+            name: "",
+            tele: "",
+            reason: "",
+            isRepeatApply: true
+          })
+        }
+      },
+      fail(res) {
+        // 未登录其他原因申请失败
+        that.setData({
+          name: "",
+          tele: "",
+          reason: "",
+          applyFail: true
         })
-        console.log(res.data.message)
       }
     })
   },
   SuccessApply() {
+    wx.navigateBack({
+      delta: 1
+    });
+  },
+  repeatApply() {
+    wx.navigateBack({
+      delta: 1
+    });
+  },
+  failApply() {
     wx.navigateBack({
       delta: 1
     });

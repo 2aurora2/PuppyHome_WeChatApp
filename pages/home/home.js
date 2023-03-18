@@ -80,7 +80,7 @@ Page({
     })
   },
   onShow(){
-    if(app.globalData.userInfo.haveNewMsg === true){
+    if(JSON.parse(app.globalData.userInfo.haveNewMsg) === true){
       wx.showTabBarRedDot({
         index: 1,
       })

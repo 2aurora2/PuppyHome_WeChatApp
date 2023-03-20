@@ -1,1 +1,9 @@
-<text>用户设置信息界面</text>
+<view class="userInfoPage">
+  <view class="avatar">
+    <image src="{{AvatarUrl}}" style="border: {{bordeStyle}}" bindtap="setAvatarUrl"></image>
+  </view>
+  <!-- 用户信息部分 -->
+  <view class="userInfoPart">
+    <!-- 昵称、姓名等等写在这里 -->
+  </view>
+</view>

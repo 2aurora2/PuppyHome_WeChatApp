@@ -1,1 +1,18 @@
-/* pages/MuInfoSubPages/setUserInfo/setUserInfo.wxss */
+.avatar {
+  position: absolute;
+  top: 180rpx;
+  left: 38%;
+}
+
+.avatar image {
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.userInfoPart {
+  width: 100%;
+  position: absolute;
+  top: 500rpx;
+}

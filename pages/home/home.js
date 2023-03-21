@@ -122,10 +122,10 @@ Page({
     wx.navigateTo({
       url: "/pages/MyInfoSubPages/setUserInfo/setUserInfo",
       success(res) {
-        console.log(res);
+        // console.log(res);
       },
       fail(res) {
-        console.log(res)
+        // console.log(res)
       }
     })
   },

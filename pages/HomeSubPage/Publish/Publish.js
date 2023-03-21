@@ -190,13 +190,12 @@ Page({
         type: that.data.dogType[that.data.typeIdx]
       },
       success(res) {
-        console.log(res);
         that.setData({
           isShowDialog: true
         })
       },
       fail(res) {
-        console.log(res)
+        // console.log(res)
       }
     })
   }

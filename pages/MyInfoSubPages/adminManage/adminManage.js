@@ -24,19 +24,17 @@ Page({
         token: wx.getStorageSync('token')
       },
       success(res) {
-        console.log(res.data);
         that.setData({
           adminList: res.data.data.generalAdmin
         })
       },
       fail(res) {
-        console.log(res.errMsg)
+        // console.log(res.errMsg)
       }
     })
   },
   // 是否确认删除的弹窗
   CheckSureDelete(e) {
-    console.log(e)
     this.setData({
       isShowDialog: true,
       currentItemId: e.currentTarget.dataset.id
@@ -64,14 +62,12 @@ Page({
           that.setData({
             isShowDialog: false
           });
-          console.log(res.data)
         },
         fail(res){
           that.onLoad();
           that.setData({
             isShowDialog: false
           });
-          console.log(res.data)
         }
       })
     }

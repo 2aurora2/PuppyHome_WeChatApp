@@ -15,8 +15,8 @@
     <view class="con">
       <text class="con2">性别：</text>
       <radio-group class="con3" bindchange="setGender">
-        <radio checked="{{Gender}}" value="1">男</radio>
-        <radio checked="{{!Gender}}" value="0">女</radio>
+        <radio class="radio1" checked="{{Gender}}" value="1">男</radio>
+        <radio class="radio2" checked="{{!Gender}}" value="0">女</radio>
       </radio-group>
     </view>
     <view class="con">

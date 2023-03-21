@@ -37,7 +37,7 @@ Page({
         })
       },
       fail(res){
-        console.log(res)
+        // console.log(res)
       }
     }),
     // 拿到已被领养的公告列表
@@ -67,10 +67,9 @@ Page({
           adoptedList: finalList,
           currentAdopt: finalList.length
         })
-        console.log(that.data.adoptedList)
       },
       fail(res){
-        console.log(res)
+        // console.log(res)
       }
     })
   },

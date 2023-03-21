@@ -72,7 +72,7 @@ Page({
               that.setData({
                 isShowLoading: true
               })
-            console.log(that.data.toIdentifyUrl);
+            // console.log(that.data.toIdentifyUrl);
             wx.request({
               url: 'http://localhost:3000/image/predict',
               method: 'GET',

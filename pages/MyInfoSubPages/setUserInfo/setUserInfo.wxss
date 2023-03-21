@@ -1,6 +1,12 @@
+page {
+  background: linear-gradient(rgba(225, 245, 255, 0.7), rgba(225, 245, 255, 0.7)), url("https://puppyhome-1317060763.cos.ap-guangzhou.myqcloud.com/others/backgroundImg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
 .avatar {
   position: absolute;
-  top: 180rpx;
+  top: 12%;
   left: 38%;
 }
 
@@ -12,34 +18,39 @@
 }
 
 .userInfoPart {
-  width: 90%;
+  width: 100%;
   position: absolute;
-  top: 450rpx;
-  left: 7%;
+  top: 27%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 50rpx;
+  box-sizing: border-box
 }
 
 .con {
-  width: 90%;
+  width: 100%;
   display: flex;
-  margin-top: 40rpx;
+  margin: 40rpx auto;
 }
 
 .con2 {
-  text-indent: 80rpx;
   text-align: left;
   font-size: larger;
   font-weight: bolder;
+  padding: 10rpx;
 }
 
 input {
+  width: 70%;
   border-bottom: 1rpx black solid;
-  width: 60%;
-  padding: 5rpx;
-  color: rgb(145, 139, 139);
+  padding: 12rpx;
+  color: rgb(30, 30, 30);
 }
 
-radio-group {
-  flex: 5;
+.radio1 {
+  margin-top: 15rpx;
+  margin-left: -20rpx;
 }
 
 .con3 {

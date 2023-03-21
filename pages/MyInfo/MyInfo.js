@@ -10,7 +10,6 @@ Page({
   },
   onShow() {
     // 用户身份标识
-    console.log(app.globalData.userInfo.avatar)
     if (app.globalData.userInfo.authentication == 0) {
       this.setData({
         AvatarUrl: app.globalData.userInfo.avatar,
@@ -43,7 +42,6 @@ Page({
         hasNewMsg: false
       })
     }
-    console.log(this.data.hasNewMsg)
     if (this.data.hasNewMsg === true) {
       wx.showTabBarRedDot({
         index: 1,
@@ -58,10 +56,10 @@ Page({
     wx.navigateTo({
       url: "/pages/MyInfoSubPages/setUserInfo/setUserInfo",
       success(res) {
-        console.log(res);
+        // console.log(res);
       },
       fail(res) {
-        console.log(res)
+        // console.log(res)
       }
     })
   },
@@ -69,23 +67,22 @@ Page({
     wx.navigateTo({
       url: "/pages/MyInfoSubPages/mySelect/mySelect",
       success(res) {
-        console.log(res);
+        // console.log(res);
       },
       fail(res) {
-        console.log(res)
+        // console.log(res)
       }
     })
   },
   ToMyMessage() {
     app.globalData.userInfo.haveNewMsg = "false";
-    console.log(app.globalData.userInfo.haveNewMsg);
     wx.navigateTo({
       url: "/pages/MyInfoSubPages/myMessage/myMessage",
       success(res) {
-        console.log(res);
+        // console.log(res);
       },
       fail(res) {
-        console.log(res)
+        // console.log(res)
       }
     })
   },
@@ -93,10 +90,10 @@ Page({
     wx.navigateTo({
       url: "/pages/MyInfoSubPages/applyForAdmin/applyForAdmin",
       success(res) {
-        console.log(res);
+        // console.log(res);
       },
       fail(res) {
-        console.log(res)
+        // console.log(res)
       }
     })
   },
@@ -104,10 +101,10 @@ Page({
     wx.navigateTo({
       url: "/pages/MyInfoSubPages/adminAudit/adminAudit",
       success(res) {
-        console.log(res);
+        // console.log(res);
       },
       fail(res) {
-        console.log(res)
+        // console.log(res)
       }
     })
   },
@@ -115,10 +112,10 @@ Page({
     wx.navigateTo({
       url: "/pages/MyInfoSubPages/adminManage/adminManage",
       success(res) {
-        console.log(res);
+        // console.log(res);
       },
       fail(res) {
-        console.log(res)
+        // console.log(res)
       }
     })
   },
@@ -126,10 +123,10 @@ Page({
     wx.navigateTo({
       url: "/pages/MyInfoSubPages/aboutUs/aboutUs",
       success(res) {
-        console.log(res);
+        // console.log(res);
       },
       fail(res) {
-        console.log(res)
+        // console.log(res)
       }
     })
   },
@@ -137,10 +134,10 @@ Page({
     wx.navigateTo({
       url: "/pages/MyInfoSubPages/myPublish/myPublish",
       success(res) {
-        console.log(res);
+        // console.log(res);
       },
       fail(res) {
-        console.log(res)
+        // console.log(res)
       }
     })
   }

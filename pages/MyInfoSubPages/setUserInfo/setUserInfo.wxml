@@ -1,38 +1,35 @@
-<view class="userInfoPage">
+<view class="userInfoPage" wx:if="{{!successSetInfo}}">
   <view class="avatar">
     <image src="{{AvatarUrl}}" style="border: {{bordeStyle}}" bindtap="setAvatarUrl"></image>
   </view>
   <!-- 用户信息部分 -->
   <view class="userInfoPart">
-    <!-- 昵称、姓名等等写在这里 -->
     <view class="con">
-      <text class="con2">昵称:</text>
-      <input type="nickname"/>
+      <text class="con2">昵称：</text>
+      <input type="nickname" value="{{NickName}}" bindblur="setNickName"/>
     </view>
-    <view class="con4">—————————————————</view>
     <view class="con">
-      <text class="con2">姓名:</text>
-      <input type="text"/>
+      <text class="con2">姓名：</text>
+      <input type="text" value="{{RealName}}" bindblur="setRealName"/>
     </view>
-    <view class="con4">—————————————————</view>
     <view class="con">
-      <text class="con2">性别:</text>
-      <radio-group class="con3">  
-        <radio>男</radio>  
-        <radio>女</radio>
+      <text class="con2">性别：</text>
+      <radio-group class="con3" bindchange="setGender">
+        <radio checked="{{Gender}}" value="1">男</radio>
+        <radio checked="{{!Gender}}" value="0">女</radio>
       </radio-group>
     </view>
-    <view class="con4">—————————————————</view>
     <view class="con">
-      <text class="con2">年龄:</text>
-      <input type="number"/>
+      <text class="con2">年龄：</text>
+      <input type="number" value="{{Age}}" bindblur="setAge"/>
     </view>
-    <view class="con4">—————————————————</view>
     <view class="con">
-      <text class="con2">手机:</text>
-      <input type="number"/>
+      <text class="con2">手机：</text>
+      <input type="number" value="{{Telephone}}" bindblur="setTelephone"/>
     </view>
-    <view class="con4">—————————————————</view>
-    <button class="color">保存</button>
+    <button class="color" bindtap="saveUserInfo">保存</button>
   </view>
 </view>
+
+<!-- 设置成功弹窗 -->
+<mp-dialog buttons="{{btns}}" mask="true" mask-closable="{{false}}" show="{{successSetInfo}}" title="{{successSetText}}" bindbuttontap="successSetInfo"></mp-dialog>

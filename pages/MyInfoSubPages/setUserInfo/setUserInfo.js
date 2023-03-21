@@ -17,7 +17,12 @@ Page({
     Gender: 1,
     Age: 100,
     Telephone: "12345678910",
-    bordeStyle: "5px lightslategray solid"
+    bordeStyle: "5px lightslategray solid",
+    successSetInfo: false,
+    successSetText: "修改成功！",
+    btns: [{
+      text: "确认"
+    }]
   },
   onLoad() {
     this.setData({
@@ -76,6 +81,75 @@ Page({
           }
         });
       }
+    })
+  },
+  // 设置昵称
+  setNickName(e) {
+    this.setData({
+      NickName: e.detail.value
+    })
+  },
+  // 设置姓名
+  setRealName(e) {
+    this.setData({
+      RealName: e.detail.value
+    })
+  },
+  // 设置年龄
+  setAge(e) {
+    this.setData({
+      Age: e.detail.value
+    })
+  },
+  // 设置手机号码
+  setTelephone(e) {
+    this.setData({
+      Telephone: e.detail.value
+    })
+  },
+  // 设置性别
+  setGender(e) {
+    this.setData({
+      Gender: parseInt(e.detail.value)
+    })
+  },
+  saveUserInfo() {
+    var that = this;
+    wx.request({
+      url: 'http://localhost:3000/user/set/info',
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        token: wx.getStorageSync('token'),
+        nickName: that.data.NickName,
+        avatar: that.data.AvatarUrl,
+        realName: that.data.RealName,
+        age: that.data.Age,
+        gender: that.data.Gender,
+        telephone: that.data.Telephone
+      },
+      success(res){
+        app.globalData.hasEvenLogin = true;
+        app.globalData.userInfo.nickName = that.data.NickName;
+        app.globalData.userInfo.realName = that.data.RealName;
+        app.globalData.userInfo.avatar = that.data.AvatarUrl;
+        app.globalData.userInfo.age = that.data.Age;
+        app.globalData.userInfo.gender = that.data.Gender;
+        app.globalData.userInfo.telephone = that.data.Telephone;
+        that.setData({
+          successSetInfo: true
+        })
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
+  },
+  successSetInfo(){
+    this.setData({
+      successSetInfo: false
     })
   }
 })

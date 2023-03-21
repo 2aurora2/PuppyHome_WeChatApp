@@ -14,29 +14,38 @@
 .userInfoPart {
   width: 100%;
   position: absolute;
-  top: 500rpx;
+  top: 450rpx;
 }
 
 .con
 {
+  width: 90%;
   display: flex;
+  margin-top: 40rpx;
 }
 
 .con2
 {
   text-indent: 80rpx;
   text-align: left;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+input{
+  border-bottom: 1rpx black solid ;
+  width: 70%;
+  padding: 5rpx;
+  color: rgb(145, 139, 139);
+}
+
+radio-group{
+  flex:5;
 }
 
 .con3
 {
   text-indent: 10rpx;
-}
-
-.con4
-{
-  display: flex;
-  justify-content: center
 }
 
 .color
@@ -45,7 +54,7 @@
   align-items: center;
   justify-content: center;
   background-color: red;
-  margin-top: 15rpx;
+  margin-top: 60rpx;
   padding: 0rpx;
   width: 100000rpx;
   height: 70rpx;

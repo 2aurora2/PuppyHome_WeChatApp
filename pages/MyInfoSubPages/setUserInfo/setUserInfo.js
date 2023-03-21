@@ -11,20 +11,20 @@ var cos = new COS({
 
 Page({
   data: {
-    AvatarUrl: app.globalData.cdnHost + "userinfo/defaultAvatar.png",
-    NickName: "wx_user",
-    RealName: "wx_user",
-    Gender: 1,
-    Age: 100,
-    Telephone: "12345678910",
-    bordeStyle: "5px lightslategray solid",
+    AvatarUrl: null,
+    NickName: null,
+    RealName: null,
+    Gender: null,
+    Age: null,
+    Telephone: null,
+    bordeStyle: null,
     successSetInfo: false,
     successSetText: "修改成功！",
     btns: [{
       text: "确认"
     }]
   },
-  onLoad() {
+  onShow() {
     this.setData({
       // 当前用户信息，若首次登入则为默认信息
       NickName: app.globalData.userInfo.nickName,
@@ -130,7 +130,7 @@ Page({
         gender: that.data.Gender,
         telephone: that.data.Telephone
       },
-      success(res){
+      success(res) {
         app.globalData.hasEvenLogin = true;
         app.globalData.userInfo.nickName = that.data.NickName;
         app.globalData.userInfo.realName = that.data.RealName;
@@ -142,14 +142,14 @@ Page({
           successSetInfo: true
         })
       },
-      fail(res){
+      fail(res) {
         console.log(res)
       }
     })
   },
-  successSetInfo(){
-    this.setData({
-      successSetInfo: false
+  successSetInfo() {
+    wx.switchTab({
+      url: '/pages/MyInfo/MyInfo',
     })
   }
 })

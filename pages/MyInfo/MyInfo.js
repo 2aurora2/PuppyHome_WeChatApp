@@ -8,7 +8,7 @@ Page({
     isComAdmin: null,
     hasNewMsg: false
   },
-  onLoad() {
+  onShow() {
     // 用户身份标识
     console.log(app.globalData.userInfo.avatar)
     if (app.globalData.userInfo.authentication == 0) {
@@ -33,8 +33,6 @@ Page({
         isSuperAdmin: true
       })
     }
-  },
-  onShow() {
     // 用户是否有新消息
     if (app.globalData.userInfo.haveNewMsg === "true") {
       this.setData({

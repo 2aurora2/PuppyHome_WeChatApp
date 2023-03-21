@@ -12,44 +12,41 @@
 }
 
 .userInfoPart {
-  width: 100%;
+  width: 90%;
   position: absolute;
   top: 450rpx;
+  left: 7%;
 }
 
-.con
-{
+.con {
   width: 90%;
   display: flex;
   margin-top: 40rpx;
 }
 
-.con2
-{
+.con2 {
   text-indent: 80rpx;
   text-align: left;
   font-size: larger;
   font-weight: bolder;
 }
 
-input{
-  border-bottom: 1rpx black solid ;
-  width: 70%;
+input {
+  border-bottom: 1rpx black solid;
+  width: 60%;
   padding: 5rpx;
   color: rgb(145, 139, 139);
 }
 
-radio-group{
-  flex:5;
+radio-group {
+  flex: 5;
 }
 
-.con3
-{
+.con3 {
   text-indent: 10rpx;
 }
 
-.color
-{
+.color {
   display: flex;
   align-items: center;
   justify-content: center;

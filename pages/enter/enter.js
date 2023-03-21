@@ -13,6 +13,6 @@ Page({
       wx.switchTab({
         url: "/pages/home/home",
       })
-    }, 1500)
+    }, 1800)
   }
 })

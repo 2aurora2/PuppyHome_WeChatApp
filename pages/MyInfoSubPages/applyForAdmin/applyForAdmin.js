@@ -31,8 +31,7 @@ Page({
   reasonInput(e) {
     this.setData({
         reason: e.detail.value
-      }),
-      console.log(this.data.name, this.data.tele, this.data.reason)
+      })
   },
   SubmitApply() {
     var that = this;
@@ -49,7 +48,6 @@ Page({
         description: this.data.reason
       },
       success(res) {
-        console.log(res.data);
         if (res.data.code === 200) {
           that.setData({
             name: "",

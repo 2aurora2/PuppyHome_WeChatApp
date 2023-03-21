@@ -40,7 +40,6 @@ Page({
     toSetInfoTxt: "完善个人信息后才可使用此功能！"
   },
   onLoad(options) {
-    console.log(options);
     this.setData({
       articleId: options.id,
       isOwner: JSON.parse(options.isOwner)
@@ -72,7 +71,6 @@ Page({
         });
         var tmpArticleDetails = that.data.articleDetails;
         tmpArticleDetails.publishTime = util.js_date_time(tmpArticleDetails.publishTime / 1000);
-        console.log(tmpArticleDetails);
         that.setData({
           articleDetails: tmpArticleDetails
         });
@@ -113,7 +111,6 @@ Page({
             articleId: that.data.articleId
           },
           success(res) {
-            console.log(res);
             that.setData({
               isCollect: true,
               collectUrl: "/image/Home/icons/evenCollect.png",
@@ -121,7 +118,7 @@ Page({
             })
           },
           fail(res) {
-            console.log(res)
+            // console.log(res)
           }
         })
       } else {
@@ -137,7 +134,7 @@ Page({
             articleId: that.data.articleId
           },
           success(res) {
-            console.log(res);
+            // console.log(res);
             that.setData({
               isCollect: false,
               collectUrl: "/image/Home/icons/noCollect.png",
@@ -145,7 +142,7 @@ Page({
             })
           },
           fail(res) {
-            console.log(res)
+            // console.log(res)
           }
         })
       }
@@ -189,13 +186,12 @@ Page({
           articleId: that.data.articleId
         },
         success(res) {
-          console.log(res)
           wx.navigateBack({
             delta: 1
           });
         },
         fail(res) {
-          console.log(res)
+          // console.log(res)
         }
       })
     }
@@ -221,7 +217,6 @@ Page({
           that.setData({
             isConfirmAdopt: false
           });
-          console.log(res)
           if (res.data.code != 200) {
             that.setData({
               error: res.data.msg,
@@ -234,7 +229,7 @@ Page({
           }
         },
         fail(res) {
-          console.log(res)
+          // console.log(res)
         }
       })
     }
@@ -257,10 +252,10 @@ Page({
     wx.navigateTo({
       url: "/pages/MyInfoSubPages/setUserInfo/setUserInfo",
       success(res) {
-        console.log(res);
+        // console.log(res);
       },
       fail(res) {
-        console.log(res)
+        // console.log(res)
       }
     })
   },

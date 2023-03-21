@@ -28,7 +28,6 @@ Page({
         token: wx.getStorageSync('token')
       },
       success(res) {
-        console.log(res.data)
         var getMsg = res.data.data.adopt;
         var finalList = [];
         for (var i = 0; i < getMsg.length; ++i) {
@@ -65,7 +64,7 @@ Page({
         }
       },
       fail(res) {
-        console.log(res)
+        // console.log(res)
       }
     })
   },
@@ -113,7 +112,7 @@ Page({
           that.onLoad();
         },
         fail(res) {
-          console.log(res)
+          // console.log(res)
         }
       })
     } else {
@@ -136,7 +135,7 @@ Page({
           that.onLoad();
         },
         fail(res) {
-          console.log(res)
+          // console.log(res)
         }
       })
     }

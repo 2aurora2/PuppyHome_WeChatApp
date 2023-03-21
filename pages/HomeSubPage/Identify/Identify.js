@@ -72,8 +72,6 @@ Page({
               that.setData({
                 isShowLoading: true
               })
-            setTimeout(function () {}, 1000);
-            console.log(that.data.toIdentifyUrl);
             wx.request({
               url: 'http://localhost:3000/image/predict',
               method: 'GET',

@@ -54,7 +54,7 @@ Page({
         }
       },
       fail(res) {
-        console.log(res)
+        // console.log(res)
       }
     })
   },

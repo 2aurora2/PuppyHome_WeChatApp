@@ -14,7 +14,6 @@ Page({
         token: wx.getStorageSync('token')
       },
       success(res) {
-        console.log(res.data)
         that.setData({
           applicators: res.data.data.applications
         })
@@ -27,10 +26,9 @@ Page({
         that.setData({
           applicators: applyArray
         })
-        console.log(that.data.applicators)
       },
       fail(res) {
-        console.log(res.errMsg)
+        // console.log(res.errMsg)
       }
     })
   },
@@ -55,7 +53,6 @@ Page({
   },
   // 接受申请Func
   acceptApply(e) {
-    console.log(e.currentTarget.dataset.id)
     var that = this;
     wx.request({
       url: 'http://localhost:3000/apply/accept',
@@ -68,17 +65,15 @@ Page({
         userId: e.currentTarget.dataset.id
       },
       success(res) {
-        console.log(res);
         that.onLoad();
       },
       fail(res) {
-        console.log(res)
+        // console.log(res)
       }
     })
   },
   // 拒绝申请Func
   rejectApply(e) {
-    console.log(e.currentTarget.dataset.id);
     var that = this;
     wx.request({
       url: 'http://localhost:3000/apply/reject',
@@ -91,11 +86,11 @@ Page({
         userId: e.currentTarget.dataset.id
       },
       success(res) {
-        console.log(res);
+        //console.log(res);
         that.onLoad();
       },
       fail(res) {
-        console.log(res)
+        // console.log(res)
       }
     })
   }

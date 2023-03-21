@@ -16,3 +16,39 @@
   position: absolute;
   top: 500rpx;
 }
+
+.con
+{
+  display: flex;
+}
+
+.con2
+{
+  text-indent: 80rpx;
+  text-align: left;
+}
+
+.con3
+{
+  text-indent: 10rpx;
+}
+
+.con4
+{
+  display: flex;
+  justify-content: center
+}
+
+.color
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  margin-top: 15rpx;
+  padding: 0rpx;
+  width: 100000rpx;
+  height: 70rpx;
+  border-radius: 100rpx;
+  color: white;
+}

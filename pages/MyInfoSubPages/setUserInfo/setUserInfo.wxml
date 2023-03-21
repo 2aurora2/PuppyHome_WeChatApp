@@ -5,5 +5,34 @@
   <!-- 用户信息部分 -->
   <view class="userInfoPart">
     <!-- 昵称、姓名等等写在这里 -->
+    <view class="con">
+      <text class="con2">昵称:</text>
+      <input type="nickname"/>
+    </view>
+    <view class="con4">—————————————————</view>
+    <view class="con">
+      <text class="con2">姓名:</text>
+      <input type="text"/>
+    </view>
+    <view class="con4">—————————————————</view>
+    <view class="con">
+      <text class="con2">性别:</text>
+      <radio-group class="con3">  
+        <radio>男</radio>  
+        <radio>女</radio>
+      </radio-group>
+    </view>
+    <view class="con4">—————————————————</view>
+    <view class="con">
+      <text class="con2">年龄:</text>
+      <input type="number"/>
+    </view>
+    <view class="con4">—————————————————</view>
+    <view class="con">
+      <text class="con2">手机:</text>
+      <input type="number"/>
+    </view>
+    <view class="con4">—————————————————</view>
+    <button class="color">保存</button>
   </view>
 </view>

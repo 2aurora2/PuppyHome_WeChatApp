@@ -1,3 +1,9 @@
+page {
+  background: linear-gradient(rgba(225, 245, 255, 0.7), rgba(225, 245, 255, 0.7)), url("https://puppyhome-1317060763.cos.ap-guangzhou.myqcloud.com/others/backgroundImg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
 .avatar {
   position: absolute;
   top: 12%;
@@ -19,7 +25,7 @@
   right: 0;
   margin: auto;
   padding: 50rpx;
-  box-sizing:border-box
+  box-sizing: border-box
 }
 
 .con {
@@ -39,10 +45,10 @@ input {
   width: 70%;
   border-bottom: 1rpx black solid;
   padding: 12rpx;
-  color: rgb(145, 139, 139);
+  color: rgb(30, 30, 30);
 }
 
-.radio1{
+.radio1 {
   margin-top: 15rpx;
   margin-left: -20rpx;
 }

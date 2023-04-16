@@ -1,4 +1,7 @@
 <view class="pageTitle"><text>申请列表</text></view>
+<view class="noApply" wx:if="{{length === 0?true:false}}">
+  <text>Tips：暂无用户申请成为管理员……</text>
+</view>
 <view class="applyitem" wx:for="{{applicators}}" wx:key="id">
   <view class="applyTitle" bindtap="ShowDetails" data-id='{{item.id}}'>
     <text class="msgTitle">申请人：</text>

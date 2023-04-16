@@ -13,7 +13,8 @@ Page({
     }, {
       text: "取消"
     }],
-    adminList: []
+    adminList: [],
+    length: 0
   },
   onLoad() {
     var that = this;
@@ -25,7 +26,8 @@ Page({
       },
       success(res) {
         that.setData({
-          adminList: res.data.data.generalAdmin
+          adminList: res.data.data.generalAdmin,
+          length: res.data.data.generalAdmin.length
         })
       },
       fail(res) {
@@ -55,15 +57,15 @@ Page({
         },
         data: {
           token: wx.getStorageSync('token'),
-          userId : that.data.currentItemId
+          userId: that.data.currentItemId
         },
-        success(res){
+        success(res) {
           that.onLoad();
           that.setData({
             isShowDialog: false
           });
         },
-        fail(res){
+        fail(res) {
           that.onLoad();
           that.setData({
             isShowDialog: false

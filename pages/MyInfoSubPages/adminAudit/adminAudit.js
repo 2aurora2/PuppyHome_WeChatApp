@@ -1,6 +1,7 @@
 Page({
   data: {
-    applicators: []
+    applicators: [],
+    length: 0
   },
   onLoad() {
     var that = this;
@@ -24,7 +25,8 @@ Page({
           applyArray[i].iconUrl = "/image/MyInfo/down.png";
         }
         that.setData({
-          applicators: applyArray
+          applicators: applyArray,
+          length: applyArray.length
         })
       },
       fail(res) {

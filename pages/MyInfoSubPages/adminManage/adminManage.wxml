@@ -1,5 +1,8 @@
 <view wx:if="{{!isShowDialog}}">
   <view class="pageTitle"><text>管理员</text></view>
+  <view class="noAdmin" wx:if="{{length === 0?true:false}}">
+    <text>Tips：暂无其他管理员……</text>
+  </view>
   <view class="AdminList">
     <view class="AdminItem" wx:for="{{adminList}}" wx:key="id">
       <mp-slideview buttons="{{btn}}" show="{{false}}" bindbuttontap="CheckSureDelete" data-id="{{item.id}}">

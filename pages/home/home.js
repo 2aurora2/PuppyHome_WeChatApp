@@ -27,7 +27,7 @@ Page({
     currentNum: 0,
     perShow: 3
   },
-  onLoad() {
+  onShow() {
     this.setData({
       isshow: app.globalData.hasEvenLogin
     });
@@ -80,8 +80,6 @@ Page({
         }
       }
     })
-  },
-  onShow() {
     this.setData({
       isTapPublish: false
     })

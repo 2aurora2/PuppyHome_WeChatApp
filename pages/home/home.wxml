@@ -22,7 +22,7 @@
       </view>
       <view class="Card" bindtap="ToIdentify">
         <image src="/image/Home/icons/photo.png"></image>
-        <view class="iconText">拍照识修勾</view>
+        <view class="iconText">拍照识小狗</view>
       </view>
     </view>
   </view>
@@ -45,7 +45,6 @@
     </view>
   </view>
 </view>
-
 <!-- 首次登陆弹窗 -->
 <mp-dialog buttons="{{btns}}" mask="true" mask-closable="{{false}}" show="{{!isshow}}" title="{{dialogText}}" bindbuttontap="ToSetUserInfo"></mp-dialog>
 <!-- 未登录禁止发布弹窗 -->

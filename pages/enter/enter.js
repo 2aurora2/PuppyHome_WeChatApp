@@ -4,10 +4,6 @@ Page({
     hasUserInfo: false,
     canIUseGetUserProfile: false,
   },
-
-  onLoad(options) {
-    
-  },
   onShow() {
     setTimeout(function () {
       wx.switchTab({

@@ -5,7 +5,7 @@ Page({
     AvatarUrl: "",
     bordeStyle: "",
     isSuperAdmin: true,
-    isComAdmin: null,
+    isComAdmin: false,
     hasNewMsg: false
   },
   onShow() {

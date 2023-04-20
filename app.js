@@ -78,6 +78,6 @@ App({
   globalData: {
     userInfo: {},
     hasEvenLogin: null,
-    cdnHost: "https://puppyhome-1317060763.cos.ap-guangzhou.myqcloud.com/"
+    cdnHost: "https://exampleBucket-111111111.cos.ap-guangzhou.myqcloud.com/"
   }
 })

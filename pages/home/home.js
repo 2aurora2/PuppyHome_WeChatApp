@@ -4,15 +4,15 @@ Page({
   data: {
     background: [{
         id: 1,
-        url: app.globalData.cdnHost + "swiper/img02.jpg"
+        url: "https://puppyhome-1317060763.cos.ap-guangzhou.myqcloud.com/swiper/img02.jpg"
       },
       {
         id: 2,
-        url: app.globalData.cdnHost + "swiper/img03.jpg"
+        url: "https://puppyhome-1317060763.cos.ap-guangzhou.myqcloud.com/swiper/img03.jpg"
       },
       {
         id: 3,
-        url: app.globalData.cdnHost + "swiper/img04.jpg"
+        url: "https://puppyhome-1317060763.cos.ap-guangzhou.myqcloud.com/swiper/img04.jpg"
       },
     ],
     btns: [{

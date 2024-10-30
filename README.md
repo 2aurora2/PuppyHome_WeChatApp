@@ -6,7 +6,12 @@
 
 * WX小程序开发
 * WxUI组件库
-* 腾讯云COS对象存储（部署参考目录的“腾讯云对象存储服务部署.md”）
+* 腾讯云COS对象存储（配置参考目录的“docs/腾讯云COS对象存储配置指南.md”）
+
+> 项目说明：
+>
+> 1.  项目启动需要自行构建npm
+> 2.  后端代码仓库：[WA-automat/PuppyHome_SpringBoot: PuppyHome‘s backend](https://github.com/WA-automat/PuppyHome_SpringBoot)
 
 ## 项目日志
 
